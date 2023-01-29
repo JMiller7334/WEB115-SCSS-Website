@@ -1,0 +1,552 @@
+/*SCSS FILES*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Ubuntu&family=Ubuntu+Condensed&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Ubuntu&family=Ubuntu+Condensed&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* FONTS */
+/*VARIABLES*/
+/*font syntax
+    'Roboto', sans-serif;
+    'Caveat', cursive;
+
+    'Permanent Marker', cursive;
+    'Ubuntu', sans-serif;
+    'Ubuntu Condensed', sans-serif;
+*/
+/* NAV MENU */
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 4;
+  position: fixed;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  text-align: left;
+  background-color: rgba(27, 25, 25, 0.55);
+  padding: 0 0 0 0;
+}
+nav #navButton {
+  font-family: "Ubuntu Condensed", sans-serif;
+  font-size: 18px;
+  margin: 8px 20px;
+  height: 40px;
+  width: 150px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 2px;
+  border: 0px solid rgba(252, 177, 38, 0.8);
+}
+nav #navButton:hover {
+  transition-duration: 0.25s;
+  background-color: rgba(0, 0, 0, 0);
+  color: rgba(252, 177, 38, 0.8);
+  transform: scale(1.1);
+  border: 2px solid rgba(252, 177, 38, 0.8);
+}
+
+/* SIDEBAR MENU */
+#buttonToggleSidebar {
+  position: fixed;
+  right: 2vw;
+  font-size: 20px;
+  height: 40px;
+  width: 180px;
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0);
+  text-align: center;
+  border: 2px solid rgb(255, 255, 255);
+  transition: 0.25s;
+}
+#buttonToggleSidebar:hover {
+  border: 2px solid rgba(252, 177, 38, 0.8);
+  color: rgba(252, 177, 38, 0.8);
+}
+
+.sidebar {
+  z-index: 3;
+  position: fixed;
+  height: 100vh;
+  width: 0;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(27, 25, 25, 0.55);
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s; /* total aimation time */
+}
+.sidebar h1 {
+  color: white;
+  font-family: "Permanent Marker", cursive;
+  font-size: 40px;
+  width: 88%;
+  text-align: center;
+}
+.sidebar p {
+  color: white;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 25px;
+  line-height: 30px;
+  text-align: left;
+  padding: 20px;
+}
+.sidebar .sidebarFooter {
+  border: 2px solid red;
+  font-family: "Ubuntu", sans-serif;
+  color: white;
+  padding-top: 0;
+  font-size: 15px;
+  text-align: right;
+  width: 95%;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: fixed;
+  bottom: 0%;
+  left: 0%;
+  width: 100%;
+  height: 7vh;
+  background-color: rgba(27, 25, 25, 0.55);
+  padding: 10px 34px;
+  z-index: 4;
+}
+footer .footerInfoContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 0px;
+  margin-top: 0px;
+}
+footer .footerInfoContainer p {
+  padding-left: 2vh;
+  text-align: right;
+  font-family: "Ubuntu", sans-serif;
+  color: white;
+}
+footer .footerSocialContainer {
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+footer .footerSocialContainer button {
+  color: rgba(0, 0, 0, 0.75);
+  font-family: "Ubuntu", sans-serif;
+  font-size: 25px;
+  width: 40px;
+  margin: 2px 0.5em;
+}
+footer .footerSocialContainer button:hover {
+  transition-duration: 0.25s;
+  color: rgba(252, 177, 38, 0.8);
+  transform: skewY(-15deg);
+}
+
+#footerIcon {
+  color: white;
+  margin: 0 10px 0 1em;
+}
+
+/* RESPONSIVE DESIGN */
+@media only screen and (max-width: 900px) {
+  nav {
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+  }
+  nav #navButton {
+    height: auto;
+    margin: 5px;
+    font-size: 15px;
+    width: 80px;
+    border-radius: 7px;
+  }
+  #buttonToggleSidebar {
+    transform: rotate(90deg);
+    font-size: 15px;
+    top: 75vh;
+    right: -80.5px;
+    border-radius: 0px 0px 20px 20px;
+  }
+  .sidebar {
+    top: 0;
+    height: 100vh;
+  }
+  .sidebar h1 {
+    text-align: left;
+    font-size: 23px;
+  }
+  .sidebar p {
+    font-size: 15px;
+    line-height: 25px;
+  }
+  /* FOOTER */
+  footer {
+    display: grid;
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    grid-template-areas: "social info";
+    padding: 4px 0;
+  }
+  footer .footerSocialContainer button {
+    font-size: 12px;
+    width: 30px;
+    margin: 0px 7px;
+    grid-area: social;
+  }
+  footer .footerInfoContainer p {
+    font-size: 12px;
+    margin: 0 5px 0 0;
+    grid-area: info;
+  }
+  #footerIcon {
+    color: var(--txtColor);
+    margin: 0 5px 0 10px;
+  }
+}
+/*FONTS*/
+/*VARIABLES*/
+@-webkit-keyframes anim-slide {
+  100% {
+    left: 0;
+  }
+}
+@keyframes anim-slide {
+  100% {
+    left: 0;
+  }
+}
+@-webkit-keyframes anim-select-button {
+  100% {
+    font-size: calc(1rem + 3vw);
+    text-decoration: overline;
+    color: rgba(252, 177, 38, 0.8);
+  }
+}
+@keyframes anim-select-button {
+  100% {
+    font-size: calc(1rem + 3vw);
+    text-decoration: overline;
+    color: rgba(252, 177, 38, 0.8);
+  }
+}
+@-webkit-keyframes anim-deselect-button {
+  100% {
+    font-size: calc(1rem + 0.25vw);
+    text-decoration: none;
+  }
+}
+@keyframes anim-deselect-button {
+  100% {
+    font-size: calc(1rem + 0.25vw);
+    text-decoration: none;
+  }
+}
+/*font syntax
+    'Roboto', sans-serif;
+    'Caveat', cursive;
+
+    'Permanent Marker', cursive;
+    'Ubuntu', sans-serif;
+    'Ubuntu Condensed', sans-serif;
+*/
+body {
+  overflow-x: hidden;
+  background-color: rgb(27, 27, 27);
+}
+
+.hero-container {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "hero";
+}
+.hero-container .gradient {
+  z-index: 2;
+  grid-area: hero;
+  width: 100%;
+  height: 101%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgb(27, 27, 27));
+}
+.hero-container .overlay {
+  z-index: 3;
+  grid-area: hero;
+  width: 100%;
+  height: 100%;
+  opacity: 0.25;
+}
+.hero-container #heroImg {
+  z-index: 1;
+  grid-area: hero;
+  width: 100%;
+  height: 60vw;
+  max-height: 71vh;
+  filter: saturate(200%);
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 10%;
+     object-position: 10%;
+}
+.hero-container #profileImg {
+  z-index: 3;
+  width: 30vw;
+  max-width: 300px;
+  position: absolute;
+  right: 5vw;
+  top: 17vw;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transform: rotate(2.7deg);
+  box-shadow: 2px 7px 7px #000000;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 15vw;
+}
+.button-container button {
+  padding: 5vw;
+  font-family: "Permanent Marker", cursive;
+  color: white;
+  background-color: rgba(255, 255, 255, 0);
+  border: 0px;
+}
+.button-container button:hover {
+  transition: 0.25s;
+  color: rgba(252, 177, 38, 0.8);
+  text-decoration: overline;
+}
+.button-container .isSelected {
+  -webkit-animation: anim-select-button 0.1s linear 0s 1 normal forwards;
+          animation: anim-select-button 0.1s linear 0s 1 normal forwards;
+}
+.button-container .notSelected {
+  -webkit-animation: anim-deselect-button 0.1s linear 0s 1 normal forwards;
+          animation: anim-deselect-button 0.1s linear 0s 1 normal forwards;
+}
+
+.category-container {
+  overflow-x: hidden;
+  position: absolute;
+  background-color: rgb(27, 27, 27);
+  left: 200vw;
+  padding-left: 30px;
+  -webkit-animation: anim-slide 1s linear 0s 1 normal forwards;
+          animation: anim-slide 1s linear 0s 1 normal forwards;
+}
+.category-container .synopsis-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  margin-bottom: calc(1rem + 10vw);
+}
+.category-container .synopsis-container h1 {
+  color: white;
+  font-family: "Ubuntu Condensed", sans-serif;
+  font-size: calc(1rem + 1.7vw);
+  text-align: left;
+  margin-top: 50px;
+}
+.category-container .synopsis-container p {
+  color: white;
+  font-family: "Ubuntu Condensed", sans-serif;
+  font-size: calc(1rem + 0.7vw);
+  line-height: calc(1rem + 1.5vw);
+  text-align: start;
+  padding: 15px;
+}
+.category-container .content-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(27, 27, 27);
+  padding-right: 10px;
+}
+.category-container .content-container section {
+  margin-top: 0px;
+  grid-area: section;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.category-container .content-container section h1 {
+  grid-area: topic;
+  color: white;
+  font-family: "Ubuntu Condensed", sans-serif;
+  text-align: left;
+  font-size: calc(1rem + 1.5vw);
+  width: 100%;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  margin-bottom: 20px;
+}
+.category-container .content-container section article {
+  grid-area: article;
+  width: 100%;
+  height: auto;
+  margin-bottom: 50px;
+  display: grid;
+  align-items: flex-start;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: 0.2fr 4fr;
+  grid-template-areas: "title ." "info img";
+}
+.category-container .content-container section article h2 {
+  grid-area: title;
+  color: white;
+  font-family: "Ubuntu Condensed", sans-serif;
+  font-size: calc(1rem + 1.5vw);
+  grid-column-start: 1;
+  grid-column-end: 2;
+  width: 95%;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+}
+.category-container .content-container section article p {
+  grid-area: info;
+  color: white;
+  font-family: "Ubuntu Condensed", sans-serif;
+  font-size: calc(1rem + 0.7vw);
+  line-height: calc(1rem + 1.5vw);
+  width: 95%;
+  height: 100%;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 10px;
+  text-align: start;
+}
+.category-container .content-container section article img {
+  grid-area: img;
+}
+.category-container .content-container section article #photoL {
+  width: 30vw;
+  transform: rotate(-3deg);
+}
+.category-container .content-container section article #photoR {
+  width: 30vw;
+  transform: rotate(2deg);
+}
+
+#categoryDeveloper {
+  display: block;
+}
+
+#categorySite {
+  display: none;
+  padding-left: calc(1rem + 1vw);
+  padding-right: calc(1rem + 1vw);
+}
+#categorySite section {
+  padding: 0;
+}
+#categorySite section article {
+  padding: calc(1rem + 1vw);
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "title" "info";
+}
+#categorySite section a:visited {
+  color: rgb(144, 98, 157);
+}
+#categorySite section h1 {
+  text-align: center;
+}
+#categorySite section h2 {
+  text-align: center;
+}
+#categorySite section p {
+  text-align: center;
+}
+
+/* RESPONSIVE DESIGN */
+@media only screen and (min-width: 1000px) {
+  .category-container .synopsis-container {
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+  .category-container .content-container {
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+}/*# sourceMappingURL=main.css.map */

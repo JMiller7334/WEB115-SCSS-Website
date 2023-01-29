@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/1d4d27c0b7.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- NAVIGATION MENU -->
+    <nav>
+        <button id="navButton" onclick="location.href='https://jmiller7334.mccdgm.net/web115/sassWebsite/'">Home</button>
+        <button id="navButton" onclick="location.href='https://jmiller7334.mccdgm.net/web115/sassWebsite/features'">Features</button>
+        <button id="navButton" onclick="location.href='https://jmiller7334.mccdgm.net/web115/sassWebsite/developer'">Developer</button>
+        <button id="buttonToggleSidebar" onclick="toggleSidebar()" class="sidebarButton">&#9776; Game Info</button>
+    </nav>
+
+    <!-- --------------- -->
+    <!-- PAGE CONTENT HERE -->
+    <!-- --------------- -->
+    <div class="page-main-container">
+
+        <div class="hero-container">
+            <img src="img/coaster_hero.PNG" id="heroRides" alt="hero images">
+            <img src="img/bus_stop.png" id="heroStory" alt="hero images">
+            <div class="gradient"></div>
+            <div class="overlay"></div>
+        </div>
+
+        <div class="button-container">
+            <button class="isSelected" id="buttonStory" onclick="toggleContent('Story')" 
+            class="sidebarButton">Story</button>
+
+            <button class="notSelected" id="buttonRides" onclick="toggleContent('Rides')" 
+            class="sidebarButton">Rides</button>
+
+            <!-- Features tab is a work in progress -->
+            <!--<button class="notSelected" id="buttonFeatures" onclick="toggleContent('Features')
+            class="sidebarButton">Features</button> -->
+        </div>
+
+
+        <div class="category-container" id="categoryStory">
+            <div class="synopsis-container">
+                    <h1>Synopsis</h1>
+                    <p> Summerbreak, 2009; you stand alone along what feels
+                        like a deserted road as you wait for the bus to arrive..<br>
+                        <br>
+                        Your destination is a paculiar theme park located high off in
+                        the mountains. A place prided with being the best in the world, but 
+                        it's odd you think that no one seems to remember when or how
+                        it come about being; it's as if it has always been.<br>
+                        <br>
+                        Rumours of a ride that vanashed, two missing people, and strange
+                        unexplainable sightings have 
+                        haunted this amusment park's history for the past 10 years. Nobody believes
+                        any of these so-called romours.. <br>
+                        <br>
+                        But you intend to solve these mysteries.
+                    </p>
+            </div>
+            
+            <div class="content-container">
+                    <section>
+                        <h1>Main Characters</h1>
+                        <article>
+                            <h2>Kana</h2>
+                            <p>A temp-hire working at The Theme Park. Known for her
+                                quick-wit, intellgence, and love for coffee. 
+                                She's considored a top class roller coaster engineer.<br>
+                                <br>
+                                Despite her professionalism she seems to be searching for something at The Theme Park.</p>
+                            <img src="img/photo_kana.png" id="photoL" alt="">
+                        </article>
+            
+                        <article>
+                            <h2>Tim</h2>
+                            <p>The laid back manager for the park's ride managment team. Tim is an easy going person 
+                                who looks out for his employees. <br>
+                                <br>
+                                Usually found in the meeting room handling 
+                                paper workwork. He knows much more then he lets on.
+                            </p>
+                            <img src="img/photo_tim.png" id="photoR" alt="">
+                        </article>
+            
+                        <article>
+                            <h2>Paul</h2>
+                            <p>A tired looking park goer once known for telling tall tales. Word is he carries with 
+                                him a dark secret.<br>
+                                <br>
+                                Paul now spends is days quietly at the local cafe.
+                            </p>
+                            <img src="img/photo_paul.png" id="photoL" alt="">
+                        </article>
+            
+                        <article>
+                            <h2>William</h2>
+                            <p>A ride operator that went missing from the park 10 years ago. An investigation was launched 
+                                but William was never found. 
+                            </p>
+                            <img src="img/photo_William.png" id="photoR" alt="">
+                        </article>
+
+                        <article>
+                            <!--<h2></h2>-->
+                            <!--<p> </p>-->
+                            <!--<img src="" id="photoR" alt="">-->
+                        </article>
+            
+                    </section>
+            </div>
+    </div>
+
+    <div class="category-container" id="categoryRides">
+        <div class="synopsis-container">
+                <h1>Roller Coasters</h1>
+                <p>Theme Park Project features a number of unique and thrilling
+                    virtual roller coasters for players to experience. By riding 
+                    roller coasters players can accumulate ridescore, an in-game 
+                    tally of the number of times they've ridden roller coasters. By reaching
+                    a high ride score players can unlock in game prizes and compete 
+                    to reach the top of the leaderboard.
+                </p>
+        </div>
+            
+        <div class="content-container">
+                <section>
+                    <!--<h1>Roller Coasters</h1> -->
+                    <article>
+                        <h2>Cliff Diver</h2>
+                        <p>Built atop a large canyon Cliff Diver stands 
+                            as the tallest roller coaster in the park
+                            and boasts the steepest drop.<br>
+                            <br>
+                            Cliff Diver's intensive first drop sends 
+                            riders plummeting along a waterfall and into two back to back 
+                            inversions.
+                        </p>
+                        <img src="img/coaster_cliffHanger.png" id="photoL" alt="">
+                    </article>
+        
+                    <article>
+                        <h2>Hurricane</h2>
+                        <p>
+                            Ahead of it's time and exceedingly rare Hurricane is a prototype coaster.<br>
+                            <br>
+                            Both incredibly smooth and safe Hurricane features
+                            a highly intensive experience thanks to sudden transitions 
+                            and quick pacing. 
+                        </p>
+                        <img src="img/coaster_hurricane.png" id="photoR" alt="">
+                    </article>
+        
+                    <article>
+                        <h2>Taboo</h2>
+                        <p>A launch roller coaster that surrounds the parkinglot and
+                            spans Central Area and Beachside District. <br>
+                            <br>
+                            Taboo launches riders up over the resort building into an inversion
+                            high above the ground only to plummet them down into the jungles below.
+                        </p>
+                        <img src="img/coaster_taboo.png" id="photoL" alt="">
+                    </article>
+        
+                    <article>
+                        <h2>Wyvern</h2>
+                        <p>Due to circumstances Wyvern was build exceedly fast.
+                            Rumour states it was due to the sudden disappearance of another ride.<br>
+                            <br>
+                            An inverted coaster that winds through a castle in the outskirts
+                            of the park. Wyvern is well known for it's 9 inversions.
+
+                        </p>
+                        <img src="img/coaster_wyvern.png" id="photoR" alt="">
+                    </article>
+
+                    <article>
+                        <h2>Unlockable Rides</h2>
+                        <p>Some roller coasters aren't accessible right from the start.<br>
+                            <br>
+                            Unlock new areas and roller coasters by completing the storymode 
+                            and increasing your ridescore.<br>
+                        </p>
+                        <img src="img/coaster_unlock.png" id="photoL" alt="">
+                    </article>
+
+                    <article>
+                        <!--<h2></h2>-->
+                        <!--<p> </p>-->
+                        <!--<img src="" id="photoR" alt="">-->
+                    </article>
+        
+                </section>
+            </div>
+        </div>
+
+    </div> <!-- page container -->
+    <!-- --------------- -->
+
+     <!-- SIDEBAR MENU -->
+     <div id="sidebarMenu" class="sidebar">
+        <h1>About</h1>
+        <p> Theme Park Project is an online open-world social <br>
+        hangout centered around a story taking place in a <br>
+        fictional theme park. Featuring a cast of memorable <br>
+        characters along with a collection of epic rollers <br>
+        coasters and rides for players to experience. <br>
+        <br>
+        <br>
+        Features <br>
+        - 3 Chapter story-driven adventure <br>
+        - Unlockable zones and rides <br>
+        - Player titles and badges<br>
+        - Customizable player owned housing <br>
+        - Job system <br>
+        - Competitive ride score system<br>
+        - Dynamic NPCs<br>
+        <br>
+        Game Info <br>
+        - Platform: PC, Tablet, Mobile <br>
+        - Genre: Low-Poly, Story, Social Hangout <br>
+        <br>
+        - Release: Coming Summer 2023</p>
+      </div>
+
+    <!-- FOOTER MENU -->
+    <footer>
+        <div class="footerSocialContainer">
+            <button><i class="fa fa-facebook"></i></button>
+            <button><i class="fa fa-instagram"></i></button>
+            <button><i class="fa fa-twitter"></i></button>
+        </div>
+        <div class="footerInfoContainer">
+            <p>Coming Summer 2023</p>
+        </div>
+    </footer>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

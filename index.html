@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/1d4d27c0b7.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- NAVIGATION MENU -->
+    <nav>
+        <button id="navButton" onclick="location.href='https://jmiller7334.mccdgm.net/web115/sassWebsite/'">Home</button>
+        <button id="navButton" onclick="location.href='https://jmiller7334.mccdgm.net/web115/sassWebsite/features'">Features</button>
+        <button id="navButton" onclick="location.href='https://jmiller7334.mccdgm.net/web115/sassWebsite/developer'">Developer</button>
+
+        <button id="buttonToggleSidebar" onclick="toggleSidebar()" class="sidebarButton">&#9776; Game Info</button>
+    </nav>
+
+    <!-- --------------- -->
+    <!-- PAGE CONTENT HERE -->
+    <!-- --------------- -->
+    <div class="container">
+        <article>
+            <img src="img/gameLogo_white.png" alt="gameLogo" id="gameLogo">
+            <h1>Welcome To The Project..</h1>
+        </article>
+
+        <div class="galleryContainer" id="galleryContainer">
+            <div class="row" id="top">
+                <div class="overlay" id="row-left"></div>
+                <img src="img/BftbPromo.PNG" id="row-left">
+
+                <div class="overlay" id="row-center"></div>
+                <img src="img/PhoenixPromo.PNG" id="row-center" class="img-0pan">
+
+                <div class="overlay" id="row-right"></div>
+                <img src="img/SoaringSkyPromo2.PNG" id="row-right" class="img-0pan">
+            </div>
+    
+            <div class="row" id="mid1">
+                <div class="overlay" id="row-left"></div>
+                <img src="img/ReaperPromo.PNG" id="row-left">
+
+                <div class="overlay" id="row-center"></div>
+                <img src="img/TreeHouse.PNG" id="row-center">
+
+                <div class="overlay" id="row-right"></div>
+                <img src="img/Parkinglot.PNG" id="row-right">
+            </div>
+    
+            <div class="row" id="mid2">
+                <div class="overlay" id="row-left"></div>
+                <img src="img/EndBringerFront.PNG" id="row-left">
+
+                <div class="overlay" id="row-center"></div>
+                <img src="img/parkWyvernFront.PNG" id="row-center">
+
+                <div class="overlay" id="row-right"></div>
+                <img src="img/CliffHangerFront.PNG" id="row-right" class="img-0pan">
+            </div>
+    
+            <div class="row" id="low">
+                <div class="overlay" id="row-left"></div>
+                <img src="img/CliffHangerFront.PNG" id="row-left" class="img-0pan">
+                <!--row low is not used in desktop/PC-->
+            </div>
+            <!--DESKTOP ONLY ROWS BELOW-->
+                <!--full is used for desktop: full screen cinamatic images-->
+            <div class="row" id="full">
+                <div class="overlayFull" id="row-left"></div>
+
+                <article id="article-left1">
+                    <div class="box">
+                        <h2 id="row-left">Explore a Vast & Exciting World</h2>
+                        <h3>Grab your friends and play online</h3>
+                    </div>
+                </article>
+                <img src="img/EndBringerFront.PNG" id="row-left" class="img-0pan">
+            </div>
+
+            <div class="row" id="full">
+                <div class="overlayFull" id="row-left"></div>
+
+                <article id="article-right1">
+                    <div class="box">
+                        <h2 id="row-left">Play The Story, Live The Adventure</h2>
+                        <h3>Adventure through an epic storyline</h3>
+                    </div>
+                </article>
+                <img src="img/PhoenixPromo.PNG" id="row-left" class="img-0pan">
+            </div>
+
+            <div class="row" id="full">
+                <div class="overlayFull" id="row-left"></div>
+
+                <article id="article-left2">
+                    <div class="box">
+                        <h2 id="row-left">Unlimited Thrills Await...</h2>
+                        <h3>Over 25 different rides spanning 10 zones</h3>
+                    </div>
+                </article>
+                <img src="img/CliffHangerFront.PNG" id="row-left" class="img-0pan">
+            </div>
+
+
+        </div>
+    </div>
+    <!-- --------------- -->
+
+     <!-- SIDEBAR MENU -->
+     <div id="sidebarMenu" class="sidebar">
+        <h1>About</h1>
+        <p> Theme Park Project is an online open-world social <br>
+        hangout centered around a story taking place in a <br>
+        fictional theme park. Featuring a cast of memorable <br>
+        characters along with a collection of epic rollers <br>
+        coasters and rides for players to experience. <br>
+        <br>
+        <br>
+        Features <br>
+        - 3 Chapter story-driven adventure <br>
+        - Unlockable zones and rides <br>
+        - Player titles and badges<br>
+        - Customizable player owned housing <br>
+        - Job system <br>
+        - Competitive ride score system<br>
+        - Dynamic NPCs<br>
+        <br>
+        Game Info <br>
+        - Platform: PC, Tablet, Mobile <br>
+        - Genre: Low-Poly, Story, Social Hangout <br>
+        <br>
+        - Release: Coming Summer 2023</p>
+      </div>
+
+    <!-- FOOTER MENU -->
+    <footer>
+        <div class="footerSocialContainer">
+            <button><i class="fa fa-facebook"></i></button>
+            <button><i class="fa fa-instagram"></i></button>
+            <button><i class="fa fa-twitter"></i></button>
+        </div>
+        <div class="footerInfoContainer">
+            <p>Coming Summer 2023</p>
+        </div>
+    </footer>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

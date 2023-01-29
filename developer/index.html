@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/1d4d27c0b7.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- NAVIGATION MENU -->
+    <nav>
+        <button id="navButton" onclick="location.href='https://jmiller7334.mccdgm.net/web115/sassWebsite/'">Home</button>
+        <button id="navButton" onclick="location.href='https://jmiller7334.mccdgm.net/web115/sassWebsite/features'">Features</button>
+        <button id="navButton" onclick="location.href='https://jmiller7334.mccdgm.net/web115/sassWebsite/developer'">Developer</button>
+        <button id="buttonToggleSidebar" onclick="toggleSidebar()" class="sidebarButton">&#9776; Game Info</button>
+    </nav>
+
+    <!-- --------------- -->
+    <!-- PAGE CONTENT HERE -->
+    <!-- --------------- -->
+    <div class="page-container">
+
+    <div class="hero-container">
+        <img src="img/dev_hero5.png" id="heroImg" alt="hero images">
+        <div class="gradient"></div>
+        <div class="overlay"></div>
+    </div>
+
+   <div class="button-container">
+        <button class="isSelected" id="buttonDeveloper" onclick="toggleContent('Developer')">The Developer</button>
+
+        <button class="notSelected" id="buttonSite" onclick="toggleContent('Site')" >About This Site</button>
+
+        <!-- Features tab is a work in progress -->
+        <!--<button class="notSelected" id="buttonFeatures" onclick="toggleContent('Features')
+        class="sidebarButton">Features</button> -->
+    </div>
+
+    <div class="category-container" id="categoryDeveloper">
+        <!--<div class="synopsis-container">
+                <h1></h1>
+                <p>
+                </p>
+        </div>-->
+            
+        <div class="content-container">
+                <section>
+                    <!--<h1>Project Theme Park</h1>-->
+                    <article>
+                        <h2>About The Developer</h2>
+                        <p>Hey, I'm Jacob Miller, an aspiring website designer and mobile app developer. I enjoy programming
+                            in my free time, especially making low poly video games. I also enjoy illustrating and making concept art  
+                            in addition to my interest in weightlifting, running, and general fitness.<br>
+                            <br>
+                            At the age of 12 I was introduced to Roblox and fell in love with 
+                            coding through it.
+                            I would go on to create several low quality albeit popular games and win a couple of contests on the 
+                            platform. I was comissioned by Roblox staff to help develop their Four Towers Bridge Battle in 
+                            2009.<br>
+                            <br>
+                            Unfortunately in 2015 my account was lost when my email was compromised. </p>
+                        <img src="img/photo_profile.png" id="photoR" alt="">
+                    </article>
+                    <article>
+                        <h2>Theme Park Project</h2>
+                        <p>
+                           Theme Park Project began as a compilation of all the Roblox project files I still had.<br>
+                           <br>
+                           Inspiration from Nintendo games along with my fascination of roller coasters 
+                           would lead to the conception of Theme Park Project in 2016.<br>
+                           <br>
+                           I had no real intention of releasing it and it become more of a 
+                           simple hobby project to better my coding skills until in 2021 I decided to finish and release it so I could focus on new 
+                           projects.<br>
+                           <br>
+                           Project Theme Park is expected to release summer of 2023.
+                           <br>
+                           <br>
+                           <br>
+                        </p>
+                        <img src="img/gameLogo_white.png" id="photoL" alt="">
+                    </article>
+                </section>
+        </div>
+    </div>
+
+    <div class="category-container" id="categorySite">
+        <!--<div class="synopsis-container">
+                <h1></h1>
+                <p></p>
+        </div>-->
+            
+        <div class="content-container">
+                <section>
+                    <h1></h1>
+                    <article>
+                        <h2>Images/Materials Used:</h2>
+                        <p>
+                            All content, images, and illustrations used in the creation of this site are either
+                            created by the site developer(Jacob Miller) or are free for commercial use.<br>
+                            <br>
+                            Images/materials credits(Links below)<br>
+                            <br>
+                            <a href="https://assets.clip-studio.com/en-us/detail?id=1379130">
+                                - Background1 from Clip Studio Assets
+                            </a><br>
+                            <a href="https://assets.clip-studio.com/en-us/detail?id=1379134">
+                                - Background2 from Clip Studio Assets
+                            </a><br>
+                            <a href="https://assets.clip-studio.com/en-us/detail?id=1939390">
+                                - Background3 from Clip Studio Assets
+                            </a><br>
+                            <a href="https://assets.clip-studio.com/en-us/detail?id=1939117">
+                                - Background4 from Clip Studio Assets
+                            </a><br>
+                            <br>
+                            <a href="https://unsplash.com/photos/_U3u_8zsiIs">
+                                - Polaroid Photo from Unsplash
+                            </a><br>
+                            <br>
+                            <br>
+                            Usage terms<br>
+                            <a href="https://unsplash.com/license">Unsplash usage terms(free for commercial use)</a><br>
+                            <a href="https://support.clip-studio.com/en-us/faq/articles/20190003#:~:text=Clip%20Studio%20Assets.-,Can%20these%20be%20used%20for%20commercial%20purposes%3F,be%20used%20for%20commercial%20purposes.">
+                            Clip Studio Assets usage terms(free for commercial use)</a>
+                            <br>
+                            <br>
+                        </p>
+                        <!--<img src="" id="photoL" alt=""> -->
+                    </article>
+
+
+                    <article>
+                        <h2>Software Used:</h2>
+                        <p>
+                            - Roblox Studio<br>
+                            - Blender<br>
+                            - Clip Studio Paint<br>
+                            - Microsoft Snipping tool<br>
+                            - Visual Studio Code<br>
+                            <br>
+                        </p>
+                        <!--<img src="" id="photoL" alt=""> -->
+                    </article>
+                </section>
+        </div>
+    </div>
+
+    </div> <!-- page container -->
+    <!-- --------------- -->
+
+     <!-- SIDEBAR MENU -->
+     <div id="sidebarMenu" class="sidebar">
+        <h1>About</h1>
+        <p> Theme Park Project is an online open-world social <br>
+        hangout centered around a story taking place in a <br>
+        fictional theme park. Featuring a cast of memorable <br>
+        characters along with a collection of epic rollers <br>
+        coasters and rides for players to experience. <br>
+        <br>
+        <br>
+        Features <br>
+        - 3 Chapter story-driven adventure <br>
+        - Unlockable zones and rides <br>
+        - Player titles and badges<br>
+        - Customizable player owned housing <br>
+        - Job system <br>
+        - Competitive ride score system<br>
+        - Dynamic NPCs<br>
+        <br>
+        Game Info <br>
+        - Platform: PC, Tablet, Mobile <br>
+        - Genre: Low-Poly, Story, Social Hangout <br>
+        <br>
+        - Release: Coming Summer 2023</p>
+      </div>
+
+    <!-- FOOTER MENU -->
+    <footer>
+        <div class="footerSocialContainer">
+            <button><i class="fa fa-facebook"></i></button>
+            <button><i class="fa fa-instagram"></i></button>
+            <button><i class="fa fa-twitter"></i></button>
+        </div>
+        <div class="footerInfoContainer">
+            <p>Coming Summer 2023</p>
+        </div>
+    </footer>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,265 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Ubuntu&family=Ubuntu+Condensed&display=swap');
+
+/*VARIABLES*/
+$navColorMain: rgba(27, 25, 25, 0.55);
+$navButtonColor: rgba(0, 0, 0, 0);
+$navFooterButtonColor: rgba(0, 0, 0, 0.75);
+$navColorSeccondary: rgba(255, 255, 255, 1);
+$navAccent: rgba(252, 177, 38, 0.8);
+
+/*font syntax
+    'Roboto', sans-serif;
+    'Caveat', cursive;
+
+    'Permanent Marker', cursive;
+    'Ubuntu', sans-serif;
+    'Ubuntu Condensed', sans-serif;
+*/
+
+$navFontMain: 'Ubuntu', sans-serif;
+$navFontSecondary: 'Permanent Marker', cursive;
+$navFontCondensed: 'Ubuntu Condensed', sans-serif;
+
+$navFontColor: white;
+$navFontSize: 20px;
+$sidebarFontSize: 25px;
+
+@keyframes animFooterFade {//nav and footer fade
+    from{
+        opacity: 0;
+    }to{
+        opacity: 1;
+    }
+}
+
+/* NAV MENU */
+nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    z-index: 4;
+    position: fixed;
+    left: 0;
+    width: 100vw;
+    height: auto;
+    text-align: left;
+    background-color: $navColorMain;
+    padding: 0 0 0 0;
+
+    #navButton {
+        font-family: $navFontCondensed;
+        font-size: 18px;
+        margin: 8px 20px ;
+        height: 40px;
+        width: 150px;
+        color: $navFontColor;
+        background-color: $navButtonColor;
+        border-radius: 2px;
+        border: 0px solid $navAccent;
+
+        &:hover {
+            transition-duration: 0.25s;
+            background-color: $navButtonColor;
+            color: $navAccent;
+            transform: scale(1.1);
+            border: 2px solid $navAccent;
+        }
+    }
+}
+
+/* SIDEBAR MENU */
+#buttonToggleSidebar {
+    position: fixed;
+    right: 2vw;
+    font-size: 20px;
+    //padding: 10px 0px;
+    height: 40px;
+    width: 180px;
+    color: $navColorSeccondary;
+    background-color: $navButtonColor;
+    text-align: center;
+    border: 0px solid $navAccent;
+    transition: 0.25s;
+    &:hover{
+        border: 2px solid $navAccent;
+        color: $navAccent;
+    }
+}
+
+.sidebar {
+    z-index: 3;
+    position: fixed;
+    height: 100vh;
+    width: 0;
+    top: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: $navColorMain;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s; /* total aimation time */
+
+    h1{
+        color: $navFontColor;
+        font-family: $navFontSecondary;
+        font-size: 40px;
+        width: 88%;
+        text-align:center;
+    }
+    p{
+        color: $navFontColor;
+        font-family: $navFontMain;
+        font-size: $sidebarFontSize;
+        line-height: 30px;
+        text-align: left;
+        padding: 20px;
+    }
+    .sidebarFooter{
+        border: 2px solid red;
+        font-family: $navFontMain;
+        color: $navFontColor;
+        padding-top: 0;
+        font-size: 15px;
+        text-align: right;
+
+        width: 95%;
+     }
+}
+
+
+footer{
+    //ANIMATION//
+    //opacity: 0;
+    //animation: animNavFade 0.5s linear 3.2s 1 normal forwards;
+
+
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+
+    position: fixed;
+    bottom: 0%;
+    left: 0%;
+
+    width: 100%;
+    height: 7vh;
+
+    background-color: $navColorMain;
+    padding: 10px 34px;
+    z-index: 4;
+
+    .footerInfoContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-bottom: 0px;
+        margin-top: 0px;
+
+        p {
+            padding-left: 2vh;
+            text-align: right;
+            font-family: $navFontMain;
+            color: $navFontColor;
+        }
+    }
+
+    .footerSocialContainer {
+        flex-direction: row;
+        justify-content: space-evenly;
+
+        button{
+            color: $navFooterButtonColor;
+            font-family: $navFontMain;
+            font-size: 25px;
+            width: 40px;
+            margin: 2px 0.5em;
+
+            &:hover {
+                transition-duration: 0.25s;
+                color: $navAccent;
+                transform: skewY(-15deg);
+            }
+        }
+    }
+}
+#footerIcon{
+    color: $navFontColor;
+    margin: 0 10px 0 1em;
+}
+
+ /* RESPONSIVE DESIGN */
+@media only screen and (max-width: 900px){
+    nav {
+        height: 3.5%;
+        #navButton {
+            height: auto;
+            margin: 5px;
+            font-size: 15px;
+            width: 80px;
+            //padding:0.25vh 0px;
+        }
+    }
+
+    #buttonToggleSidebar {
+        transform: rotate(90deg);
+        background-color: $navColorMain;
+        font-size: 15px;
+        top: 75vh;
+        right: -80.5px;
+        //margin: 0;
+        //padding: 0;
+        border-radius: 0px 0px 20px 20px;
+    }
+    .sidebar{
+        top: 0; //4vh
+        height: 100vh; //92vh
+
+        h1 {
+            text-align: left;
+            font-size: 23px;
+        }
+        p{
+            font-size: 15px;
+            line-height: 25px;
+        }
+    }
+
+    /* FOOTER */
+    footer {
+        opacity: 0;
+        animation: animFooterFade 0.5s linear 3.2s 1 normal forwards;
+
+        display: grid;
+        height: min-content;
+        grid-template-rows: auto;
+        grid-template-columns: auto;
+        grid-template-areas: 
+            "social info";
+        padding: 4px 0;
+
+        .footerSocialContainer button{
+            font-size: 12px;
+            width: 30px;
+            margin: 0px 7px;
+            grid-area: social;
+        }
+        .footerInfoContainer p{
+            font-size: 12px;
+            margin: 0 5px 0 0;
+            grid-area: info;
+        }
+    }
+    #footerIcon{
+        color: var(--txtColor);
+        margin: 0 5px 0 10px;
+    
+    }
+}
+

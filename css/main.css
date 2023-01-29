@@ -1,0 +1,733 @@
+/*SCSS FILES*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Ubuntu&family=Ubuntu+Condensed&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Ubuntu&family=Ubuntu+Condensed&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* FONTS */
+/*VARIABLES*/
+/*font syntax
+    'Roboto', sans-serif;
+    'Caveat', cursive;
+
+    'Permanent Marker', cursive;
+    'Ubuntu', sans-serif;
+    'Ubuntu Condensed', sans-serif;
+*/
+@-webkit-keyframes animFooterFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes animFooterFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* NAV MENU */
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 4;
+  position: fixed;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  text-align: left;
+  background-color: rgba(27, 25, 25, 0.55);
+  padding: 0 0 0 0;
+}
+nav #navButton {
+  font-family: "Ubuntu Condensed", sans-serif;
+  font-size: 18px;
+  margin: 8px 20px;
+  height: 40px;
+  width: 150px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 2px;
+  border: 0px solid rgba(252, 177, 38, 0.8);
+}
+nav #navButton:hover {
+  transition-duration: 0.25s;
+  background-color: rgba(0, 0, 0, 0);
+  color: rgba(252, 177, 38, 0.8);
+  transform: scale(1.1);
+  border: 2px solid rgba(252, 177, 38, 0.8);
+}
+
+/* SIDEBAR MENU */
+#buttonToggleSidebar {
+  position: fixed;
+  right: 2vw;
+  font-size: 20px;
+  height: 40px;
+  width: 180px;
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0);
+  text-align: center;
+  border: 0px solid rgba(252, 177, 38, 0.8);
+  transition: 0.25s;
+}
+#buttonToggleSidebar:hover {
+  border: 2px solid rgba(252, 177, 38, 0.8);
+  color: rgba(252, 177, 38, 0.8);
+}
+
+.sidebar {
+  z-index: 3;
+  position: fixed;
+  height: 100vh;
+  width: 0;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(27, 25, 25, 0.55);
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s; /* total aimation time */
+}
+.sidebar h1 {
+  color: white;
+  font-family: "Permanent Marker", cursive;
+  font-size: 40px;
+  width: 88%;
+  text-align: center;
+}
+.sidebar p {
+  color: white;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 25px;
+  line-height: 30px;
+  text-align: left;
+  padding: 20px;
+}
+.sidebar .sidebarFooter {
+  border: 2px solid red;
+  font-family: "Ubuntu", sans-serif;
+  color: white;
+  padding-top: 0;
+  font-size: 15px;
+  text-align: right;
+  width: 95%;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: fixed;
+  bottom: 0%;
+  left: 0%;
+  width: 100%;
+  height: 7vh;
+  background-color: rgba(27, 25, 25, 0.55);
+  padding: 10px 34px;
+  z-index: 4;
+}
+footer .footerInfoContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 0px;
+  margin-top: 0px;
+}
+footer .footerInfoContainer p {
+  padding-left: 2vh;
+  text-align: right;
+  font-family: "Ubuntu", sans-serif;
+  color: white;
+}
+footer .footerSocialContainer {
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+footer .footerSocialContainer button {
+  color: rgba(0, 0, 0, 0.75);
+  font-family: "Ubuntu", sans-serif;
+  font-size: 25px;
+  width: 40px;
+  margin: 2px 0.5em;
+}
+footer .footerSocialContainer button:hover {
+  transition-duration: 0.25s;
+  color: rgba(252, 177, 38, 0.8);
+  transform: skewY(-15deg);
+}
+
+#footerIcon {
+  color: white;
+  margin: 0 10px 0 1em;
+}
+
+/* RESPONSIVE DESIGN */
+@media only screen and (max-width: 900px) {
+  nav {
+    height: 3.5%;
+  }
+  nav #navButton {
+    height: auto;
+    margin: 5px;
+    font-size: 15px;
+    width: 80px;
+  }
+  #buttonToggleSidebar {
+    transform: rotate(90deg);
+    background-color: rgba(27, 25, 25, 0.55);
+    font-size: 15px;
+    top: 75vh;
+    right: -80.5px;
+    border-radius: 0px 0px 20px 20px;
+  }
+  .sidebar {
+    top: 0;
+    height: 100vh;
+  }
+  .sidebar h1 {
+    text-align: left;
+    font-size: 23px;
+  }
+  .sidebar p {
+    font-size: 15px;
+    line-height: 25px;
+  }
+  /* FOOTER */
+  footer {
+    opacity: 0;
+    -webkit-animation: animFooterFade 0.5s linear 3.2s 1 normal forwards;
+            animation: animFooterFade 0.5s linear 3.2s 1 normal forwards;
+    display: grid;
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    grid-template-areas: "social info";
+    padding: 4px 0;
+  }
+  footer .footerSocialContainer button {
+    font-size: 12px;
+    width: 30px;
+    margin: 0px 7px;
+    grid-area: social;
+  }
+  footer .footerInfoContainer p {
+    font-size: 12px;
+    margin: 0 5px 0 0;
+    grid-area: info;
+  }
+  #footerIcon {
+    color: var(--txtColor);
+    margin: 0 5px 0 10px;
+  }
+}
+/*FONTS*/
+/*font syntax
+    'Roboto', sans-serif;
+    'Caveat', cursive;
+
+    'Permanent Marker', cursive;
+    'Ubuntu', sans-serif;
+    'Ubuntu Condensed', sans-serif;
+*/
+@-webkit-keyframes animSlide {
+  100% {
+    margin: 0 0%;
+  }
+}
+@keyframes animSlide {
+  100% {
+    margin: 0 0%;
+  }
+}
+@-webkit-keyframes animFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes animFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes animOpacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.15;
+  }
+}
+@keyframes animOpacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.15;
+  }
+}
+@-webkit-keyframes animDuelFade {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes animDuelFade {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+body {
+  background-color: rgb(92, 92, 92);
+}
+
+.container {
+  display: grid;
+  grid-template-areas: "main";
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+.container article {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+.container article img { /*main logo*/
+  z-index: 3;
+  margin-top: 38vh;
+  height: auto;
+  width: 42%;
+}
+.container article h1 {
+  z-index: 0;
+  font-family: "Ubuntu Condensed", sans-serif;
+  font-size: 3vh;
+  color: rgb(255, 255, 255);
+}
+
+.galleryContainer {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "top" "mid1" "mid2" "low";
+  row-gap: 0px;
+  -moz-column-gap: 0px;
+       column-gap: 0px;
+  height: 100vh;
+}
+.galleryContainer .row {
+  display: grid;
+  grid-template-areas: "left center right";
+  grid-template-columns: auto;
+  grid-template-rows: 1fr;
+  height: 100%;
+  width: 100%;
+  row-gap: 0px;
+  -moz-column-gap: 0px;
+       column-gap: 0px;
+}
+.galleryContainer .row article {
+  z-index: 2;
+  position: absolute;
+  display: flex;
+  justify-content: start;
+  padding: 9vh 3vh;
+}
+.galleryContainer .row article .box {
+  padding: 1rem;
+  border-radius: 20px;
+  background-color: rgba(27, 25, 25, 0.55);
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.galleryContainer .row article .box h2 {
+  text-align: justify;
+  font-family: "Permanent Marker", cursive;
+  color: rgb(255, 255, 255);
+  font-size: 28px;
+}
+.galleryContainer .row article .box h3 {
+  text-align: justify;
+  margin: 5px 2rem;
+  font-family: "Permanent Marker", cursive;
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+}
+.galleryContainer .row #article-left1 {
+  align-items: flex-start;
+}
+.galleryContainer .row #article-left2 {
+  align-items: flex-start;
+}
+.galleryContainer .row #article-right1 {
+  align-items: flex-end;
+}
+.galleryContainer .row .overlay {
+  z-index: 2;
+  background-color: rgb(0, 0, 0);
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+.galleryContainer .row .overlayFull {
+  z-index: 2;
+  background-color: rgb(0, 0, 0);
+  opacity: 0.17;
+  width: 100%;
+  height: 100%;
+}
+.galleryContainer .row img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.galleryContainer .img-0pan {
+  -o-object-position: 0%;
+     object-position: 0%;
+}
+.galleryContainer .img-100pan {
+  -o-object-position: 100%;
+     object-position: 100%;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+/* --- MOBILE SPECIFIC --- */
+@media only screen and (max-width: 900px) {
+  /* IDs ROWS */
+  /* IDs IMGs*/
+}
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+  html {
+    -ms-scroll-snap-type: y mandatory;
+        scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  #gameLogo {
+    z-index: 3;
+    margin-top: 15;
+    height: auto;
+    width: 20%;
+  }
+  .container {
+    overflow: visible;
+  }
+  .galleryContainer {
+    scroll-snap-align: center;
+  }
+  .galleryContainer #top {
+    height: 100vh;
+  }
+  .galleryContainer #mid1 {
+    display: none;
+  }
+  .galleryContainer #mid2 {
+    display: none;
+  }
+  .galleryContainer #low {
+    display: none;
+  }
+  .galleryContainer #full {
+    scroll-snap-align: center;
+    display: grid;
+    height: 100vh;
+  }
+}
+@media only screen and (max-width: 900px) {
+  article h1 {
+    opacity: 1;
+    -webkit-animation: animDuelFade 1s linear 0.1s 1 normal both;
+            animation: animDuelFade 1s linear 0.1s 1 normal both;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #gameLogo {
+    opacity: 0;
+    -webkit-animation: animFade 0.5s linear 3.5s 1 normal both;
+            animation: animFade 0.5s linear 3.5s 1 normal both;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .overlay {
+    -webkit-animation: animOpacity 0.5s linear 3.2s 1 normal forwards;
+            animation: animOpacity 0.5s linear 3.2s 1 normal forwards;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #top img {
+    margin: 0px 100%;
+    -webkit-animation: animSlide 0.5s linear 1.5s 1 normal forwards;
+            animation: animSlide 0.5s linear 1.5s 1 normal forwards;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #mid1 img {
+    margin: 0px 100%;
+    -webkit-animation: animSlide 0.5s linear 1.75s 1 normal forwards;
+            animation: animSlide 0.5s linear 1.75s 1 normal forwards;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #mid2 img {
+    margin: 0px 100%;
+    -webkit-animation: animSlide 0.5s linear 2s 1 normal forwards;
+            animation: animSlide 0.5s linear 2s 1 normal forwards;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #low img {
+    margin: 0px 100%;
+    -webkit-animation: animSlide 0.5s linear 2.25s 1 normal forwards;
+            animation: animSlide 0.5s linear 2.25s 1 normal forwards;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #top {
+    grid-area: top;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #mid1 {
+    grid-area: mid1;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #mid2 {
+    grid-area: mid2;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #low {
+    grid-area: low;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #full {
+    display: none;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #row-left {
+    grid-area: left;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #row-center {
+    display: none;
+    grid-area: center;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #row-right {
+    display: none;
+    grid-area: right;
+  }
+}
+/* --- DESKTOP/PC/Large Tablet --- */
+@media only screen and (min-width: 900px) {
+  .container {
+    overflow: visible;
+    display: grid;
+    grid-template-areas: "main";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: auto;
+    height: auto;
+  }
+  .galleryContainer {
+    overflow: visible;
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 33.5% 33.5% 33.5% auto;
+    grid-template-areas: "top" "mid1" "mid2" "low";
+    row-gap: 0px;
+    -moz-column-gap: 0px;
+         column-gap: 0px;
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: center;
+  }
+  article h1 {
+    position: absolute;
+    opacity: 0;
+    -webkit-animation: animDuelFade 1.7s linear 0.1s 1 normal both;
+            animation: animDuelFade 1.7s linear 0.1s 1 normal both;
+  }
+  #gameLogo {
+    height: auto;
+    width: 30vh;
+    opacity: 0;
+    -webkit-animation: animFade 0.6s linear 3.5s 1 normal forwards;
+            animation: animFade 0.6s linear 3.5s 1 normal forwards;
+  }
+  .overlay {
+    -webkit-animation: animOpacity 0.6s linear 3.2s 1 normal forwards;
+            animation: animOpacity 0.6s linear 3.2s 1 normal forwards;
+  }
+  #top img {
+    margin: 0px 300%;
+    -webkit-animation: animSlide 0.6s linear 1.5s 1 normal forwards;
+            animation: animSlide 0.6s linear 1.5s 1 normal forwards;
+  }
+  #mid1 img {
+    margin: 0px 300%;
+    -webkit-animation: animSlide 0.6s linear 1.75s 1 normal forwards;
+            animation: animSlide 0.6s linear 1.75s 1 normal forwards;
+  }
+  #mid2 img {
+    margin: 0px 300%;
+    -webkit-animation: animSlide 0.6s linear 2s 1 normal forwards;
+            animation: animSlide 0.6s linear 2s 1 normal forwards;
+  }
+  html {
+    -ms-scroll-snap-type: y mandatory;
+        scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .container {
+    display: grid;
+    grid-template-areas: "main";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+    height: 100%;
+  }
+  .container article {
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+  .container article img { /*main logo*/
+    margin-bottom: 12vh;
+    width: 17%;
+  }
+  /* IDs ROWS */
+  #top {
+    grid-area: top;
+  }
+  #mid1 {
+    grid-area: mid1;
+  }
+  #mid2 {
+    grid-area: mid2;
+  }
+  #low {
+    display: none;
+  }
+  #full {
+    scroll-snap-align: center;
+    height: 100vh;
+    width: 100vw;
+  }
+  /* IDs IMGs*/
+  #row-left {
+    grid-area: left;
+  }
+  #row-center {
+    display: inline;
+    grid-area: center;
+  }
+  #row-right {
+    display: inline;
+    grid-area: right;
+  }
+}/*# sourceMappingURL=main.css.map */

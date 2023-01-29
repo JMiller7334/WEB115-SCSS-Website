@@ -1,0 +1,228 @@
+/* FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Ubuntu&family=Ubuntu+Condensed&display=swap");
+/*VARIABLES*/
+/*font syntax
+    'Roboto', sans-serif;
+    'Caveat', cursive;
+
+    'Permanent Marker', cursive;
+    'Ubuntu', sans-serif;
+    'Ubuntu Condensed', sans-serif;
+*/
+@-webkit-keyframes animFooterFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes animFooterFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* NAV MENU */
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 4;
+  position: fixed;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  text-align: left;
+  background-color: rgba(27, 25, 25, 0.55);
+  padding: 0 0 0 0;
+}
+nav #navButton {
+  font-family: "Ubuntu Condensed", sans-serif;
+  font-size: 18px;
+  margin: 8px 20px;
+  height: 40px;
+  width: 150px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 2px;
+  border: 0px solid rgba(252, 177, 38, 0.8);
+}
+nav #navButton:hover {
+  transition-duration: 0.25s;
+  background-color: rgba(0, 0, 0, 0);
+  color: rgba(252, 177, 38, 0.8);
+  transform: scale(1.1);
+  border: 2px solid rgba(252, 177, 38, 0.8);
+}
+
+/* SIDEBAR MENU */
+#buttonToggleSidebar {
+  position: fixed;
+  right: 2vw;
+  font-size: 20px;
+  height: 40px;
+  width: 180px;
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0);
+  text-align: center;
+  border: 0px solid rgba(252, 177, 38, 0.8);
+  transition: 0.25s;
+}
+#buttonToggleSidebar:hover {
+  border: 2px solid rgba(252, 177, 38, 0.8);
+  color: rgba(252, 177, 38, 0.8);
+}
+
+.sidebar {
+  z-index: 3;
+  position: fixed;
+  height: 100vh;
+  width: 0;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(27, 25, 25, 0.55);
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s; /* total aimation time */
+}
+.sidebar h1 {
+  color: white;
+  font-family: "Permanent Marker", cursive;
+  font-size: 40px;
+  width: 88%;
+  text-align: center;
+}
+.sidebar p {
+  color: white;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 25px;
+  line-height: 30px;
+  text-align: left;
+  padding: 20px;
+}
+.sidebar .sidebarFooter {
+  border: 2px solid red;
+  font-family: "Ubuntu", sans-serif;
+  color: white;
+  padding-top: 0;
+  font-size: 15px;
+  text-align: right;
+  width: 95%;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: fixed;
+  bottom: 0%;
+  left: 0%;
+  width: 100%;
+  height: 7vh;
+  background-color: rgba(27, 25, 25, 0.55);
+  padding: 10px 34px;
+  z-index: 4;
+}
+footer .footerInfoContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 0px;
+  margin-top: 0px;
+}
+footer .footerInfoContainer p {
+  padding-left: 2vh;
+  text-align: right;
+  font-family: "Ubuntu", sans-serif;
+  color: white;
+}
+footer .footerSocialContainer {
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+footer .footerSocialContainer button {
+  color: rgba(0, 0, 0, 0.75);
+  font-family: "Ubuntu", sans-serif;
+  font-size: 25px;
+  width: 40px;
+  margin: 2px 0.5em;
+}
+footer .footerSocialContainer button:hover {
+  transition-duration: 0.25s;
+  color: rgba(252, 177, 38, 0.8);
+  transform: skewY(-15deg);
+}
+
+#footerIcon {
+  color: white;
+  margin: 0 10px 0 1em;
+}
+
+/* RESPONSIVE DESIGN */
+@media only screen and (max-width: 900px) {
+  nav {
+    height: 3.5%;
+  }
+  nav #navButton {
+    height: auto;
+    margin: 5px;
+    font-size: 15px;
+    width: 80px;
+  }
+  #buttonToggleSidebar {
+    transform: rotate(90deg);
+    background-color: rgba(27, 25, 25, 0.55);
+    font-size: 15px;
+    top: 75vh;
+    right: -80.5px;
+    border-radius: 0px 0px 20px 20px;
+  }
+  .sidebar {
+    top: 0;
+    height: 100vh;
+  }
+  .sidebar h1 {
+    text-align: left;
+    font-size: 23px;
+  }
+  .sidebar p {
+    font-size: 15px;
+    line-height: 25px;
+  }
+  /* FOOTER */
+  footer {
+    opacity: 0;
+    -webkit-animation: animFooterFade 0.5s linear 3.2s 1 normal forwards;
+            animation: animFooterFade 0.5s linear 3.2s 1 normal forwards;
+    display: grid;
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    grid-template-areas: "social info";
+    padding: 4px 0;
+  }
+  footer .footerSocialContainer button {
+    font-size: 12px;
+    width: 30px;
+    margin: 0px 7px;
+    grid-area: social;
+  }
+  footer .footerInfoContainer p {
+    font-size: 12px;
+    margin: 0 5px 0 0;
+    grid-area: info;
+  }
+  #footerIcon {
+    color: var(--txtColor);
+    margin: 0 5px 0 10px;
+  }
+}/*# sourceMappingURL=navigation.css.map */

@@ -1,0 +1,348 @@
+// By Jacob Miller
+/*SCSS FILES*/
+@import 'reset';
+@import 'navigation';
+
+/*FONTS*/
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Ubuntu&family=Ubuntu+Condensed&display=swap');
+
+/*VARIABLES*/
+$colorMain: rgb(48, 48, 48);
+$colorSeccondary: rgba(255, 255, 255, 1);
+$colorButton: rgba(255, 255, 255, 0);
+$accent: rgba(252, 177, 38, 0.8);
+
+$fontMain: 'Ubuntu', sans-serif;
+$fontSecondary: 'Permanent Marker', cursive;
+$fontCondensed: 'Ubuntu Condensed', sans-serif;
+
+$fontP-mobile: calc(1rem + 1vw);
+$fontLH-mobile: calc(1rem + 1.5vw);
+
+
+$fontP-desktop: calc(0.5rem + 1vw);
+$fontLH-desktop: calc(0.5rem + 1.5vw);
+
+
+$fontColor: white;
+$bgColor: rgb(27, 27, 27);
+
+//animations//
+@keyframes anim-slide {
+    100%{
+        left: 0;
+    }
+}
+
+@keyframes anim-select-button{
+    100% {
+        font-size: calc(2rem + 100%);
+        text-decoration: overline;
+        color: $accent;
+    }
+}
+
+@keyframes anim-deselect-button{
+    100% {
+        font-size: calc(2rem + 0.25%);
+        text-decoration: none;
+    }
+}
+
+/*font syntax
+    'Roboto', sans-serif;
+    'Caveat', cursive;
+
+    'Permanent Marker', cursive;
+    'Ubuntu', sans-serif;
+    'Ubuntu Condensed', sans-serif;
+*/
+
+body{
+    overflow-x: hidden;
+    background-color: $bgColor;
+}
+
+.page-main-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "page-hero"
+    "page-buttons"
+    "primary-content";
+}
+
+.hero-container{
+
+    grid-area: page-hero;
+    height: auto;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "hero";
+
+    img{
+        z-index: 1;
+        grid-area: hero;
+        width: 100%;
+        height: 60vw;
+        max-height: 71vh;
+
+        object-fit: cover;
+        object-position: 10%;
+    }
+    .gradient{
+        z-index: 2;
+        grid-area: hero;
+        width: 100%;
+        height: 101%;
+        //height: 13vh;
+        //margin-top: 12.3vh;
+        background-image: linear-gradient(rgba(0, 0, 0, 0), $bgColor);
+    }
+    .overlay{
+        z-index: 3;
+        grid-area: hero;
+        width: 100%;
+        height: 100%;
+        opacity: 0.25;
+        //background-color: black;
+    }
+    //IDS for alternating hero images//
+    //config default z-index
+    #heroStory{
+        z-index: 1;
+    }
+    #heroRides{
+        z-index: 0;
+    }
+}
+.button-container{
+    grid-area: page-buttons;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 15vw; //orginal 15vw
+
+    button{
+        padding: 5vw; //original 5vw
+        font-family: $fontSecondary;
+        color: $fontColor;
+        background-color: $colorButton;
+        border: 0px;
+
+        &:hover{
+            transition: 0.25s;
+            color: $accent;
+            text-decoration: overline;
+        }
+    }
+    .isSelected{
+        //font-size: 25px;
+        //text-decoration: overline;
+        animation: anim-select-button 0.1s linear 0s 1 normal forwards;
+    }
+    .notSelected{
+        //font-size: 15px;
+        //text-decoration: none;
+        animation: anim-deselect-button 0.1s linear 0s 1 normal forwards;
+    }
+
+}
+//togglable content container
+.category-container {
+    grid-area: primary-content;
+
+    overflow-x: hidden;
+
+    //position: absolute; not compatable w/grid
+
+    background-color: $bgColor;
+    //left: 200vw;
+    //animation: anim-slide 1s linear 0s 1 normal forwards;
+
+    //category summary
+    .synopsis-container{
+        display: flex;
+        flex-direction: column;
+        height: min-content;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    
+        h1{
+            color: $fontColor;
+            font-family: $fontSecondary;
+            font-size: calc(1rem + 1.5vw);
+            text-align: center;
+        }
+    
+        p{
+            color: $fontColor;
+            font-family: $fontCondensed;
+            padding: 15px;
+        }
+    }
+    //category info
+    .content-container{
+        //border: 2px solid red;
+    
+        display: flex;
+        flex-direction: column;
+        //grid-template-columns: 1fr;
+        //grid-template-rows: auto;
+        //grid-template-areas: 
+                //"section";
+        //width: 100%;
+        align-items: center;
+        justify-content: center;
+
+        background-color: $bgColor;
+
+        padding-left: 10px;
+        padding-right: 10px;
+    
+        section{
+            //border: 2px solid green;
+            //border-radius: 20px;
+            margin-top: 0px;
+            grid-area: section;
+            width: 100%;
+            height: auto;
+    
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /*grid-template-columns: 2fr 1fr;
+            grid-template-rows: repeat(1fr 3fr);
+            grid-template-areas: 
+                "topic ."
+                "article article";*/
+    
+            //background-color: $colorMain;
+    
+            h1{
+                grid-area: topic;
+    
+                color: $fontColor;
+                font-family: $fontSecondary;
+                text-align: left;
+                font-size: calc(1rem + 1.5vw);
+    
+                width: 100%;
+                height: min-content;
+
+                margin-top: 3vw;
+                margin-bottom: 0vw;
+                padding-left: 15px;
+            }
+            article{
+                //border: 2px solid blue;
+    
+                grid-area: article;
+                width: 100%;
+                height: auto;
+
+                margin-bottom: 50px;
+                padding-left: 50px; //was 15 to line up w/header txt
+    
+                display: grid;
+                align-items:center;
+                grid-template-columns: 3fr 2fr;
+                grid-template-rows: 0.75fr 4fr;
+                grid-template-areas: 
+                    "title img"
+                    "info img";
+    
+                h2{
+                    //border: 2px solid yellow;
+                    grid-area: title;
+    
+                    color: $fontColor;
+                    font-family: $fontSecondary;
+                    font-size: calc(1rem + 1.5vw);
+
+                    grid-column-start: 1;
+                    grid-column-end: 2;
+    
+                    width: 95%;
+                    height: min-content;
+                    padding: 1vw 0px;//15px
+                }
+                p{
+                    //border: 2px solid yellow;
+                    grid-area: info;
+    
+                    color: $fontColor;
+                    font-family: $fontCondensed;
+    
+                    width: 95%;
+                    height: 100%;
+                    padding: 0px 0px;
+                    padding-right: 10px;
+                }
+    
+                img{
+                    grid-area: img;
+                }
+                #photoL{
+                    width: 80%;
+                    transform: rotate(-3deg);
+                }
+                #photoR{
+                    width: 80%;
+                    transform: rotate(2deg);
+                }
+            }
+        }
+    }
+
+    //Text size here
+    p{
+        font-size: $fontP-mobile;
+        line-height: $fontLH-mobile;
+    }
+}
+//IDs for each container
+#categoryStory{
+    display: block;
+
+    img{
+        max-width: 400px;
+    }
+}
+#categoryRides{
+    display: none;
+}
+
+ /* RESPONSIVE DESIGN */
+ @media only screen and (min-width: 1000px){
+    .page-main-container{
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-areas: 
+        "page-hero page-hero page-hero"
+        "page-buttons page-buttons page-buttons"
+        ". primary-content .";
+
+        .button-container{
+            height: 6.6vw;
+            button{
+                padding: 1.5vw;
+            }
+        }
+
+        p{
+            font-size: $fontP-desktop;
+            line-height: $fontLH-desktop;
+        }
+    }
+ }
+
+
+
+
+
