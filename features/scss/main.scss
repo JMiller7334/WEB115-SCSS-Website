@@ -118,6 +118,9 @@ body{
     #heroRides{
         z-index: 0;
     }
+    #heroFeatures{
+        z-index: 0;
+    }
 }
 .button-container{
     grid-area: page-buttons;
@@ -316,6 +319,9 @@ body{
 }
 #categoryRides{
     display: none;
+}
+#categoryFeatures{
+   display: none; 
 }
 
  /* RESPONSIVE DESIGN */
