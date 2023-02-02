@@ -71,55 +71,75 @@ table {
     'Ubuntu', sans-serif;
     'Ubuntu Condensed', sans-serif;
 */
+.parallax-container {
+  display: grid;
+  grid-row: 1fr;
+  grid-template-areas: "nav";
+}
+
 /* NAV MENU */
 nav {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr, 2fr, 1f;
+  grid-template-rows: auto;
+  grid-template-areas: "main-nav . game-info-nav";
   z-index: 4;
   position: fixed;
   left: 0;
   width: 100vw;
   height: auto;
   text-align: left;
-  background-color: rgba(27, 25, 25, 0.55);
-  padding: 0 0 0 0;
+  padding: 0 0 0 5px;
+}
+nav .nav-button-container {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  margin: 10px;
+}
+nav #nav-main-buttons {
+  grid-area: main-nav;
+}
+nav #nav-game-info {
+  grid-area: game-info-nav;
 }
 nav #navButton {
   font-family: "Ubuntu Condensed", sans-serif;
-  font-size: 18px;
-  margin: 8px 20px;
+  font-size: 1rem;
+  padding: 0;
   height: 40px;
-  width: 150px;
+  width: 7vw;
   color: white;
   background-color: rgba(0, 0, 0, 0);
   border-radius: 2px;
-  border: 0px solid rgba(252, 177, 38, 0.8);
+  border: 0px solid white;
 }
 nav #navButton:hover {
   transition-duration: 0.25s;
   background-color: rgba(0, 0, 0, 0);
-  color: rgba(252, 177, 38, 0.8);
   transform: scale(1.1);
-  border: 2px solid rgba(252, 177, 38, 0.8);
+  border: 2px solid white;
 }
 
 /* SIDEBAR MENU */
 #buttonToggleSidebar {
   position: fixed;
+  padding: 0;
+  margin: 0;
   right: 2vw;
-  font-size: 20px;
+  font-size: 1rem;
   height: 40px;
   width: 180px;
   color: rgb(255, 255, 255);
   background-color: rgba(0, 0, 0, 0);
   text-align: center;
-  border: 2px solid rgb(255, 255, 255);
+  border: 0px solid rgb(255, 255, 255);
   transition: 0.25s;
 }
 #buttonToggleSidebar:hover {
-  border: 2px solid rgba(252, 177, 38, 0.8);
-  color: rgba(252, 177, 38, 0.8);
+  border: 2px solid rgb(66, 172, 254);
+  color: rgb(66, 172, 254);
 }
 
 .sidebar {
@@ -163,36 +183,44 @@ nav #navButton:hover {
 }
 
 footer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "social . .";
   position: fixed;
   bottom: 0%;
   left: 0%;
-  width: 100%;
+  width: 100vw;
   height: 7vh;
-  background-color: rgba(27, 25, 25, 0.55);
-  padding: 10px 34px;
   z-index: 4;
+  margin-left: 10px;
 }
 footer .footerInfoContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding-bottom: 0px;
-  margin-top: 0px;
+  grid-area: info;
+  width: 100%;
 }
 footer .footerInfoContainer p {
-  padding-left: 2vh;
-  text-align: right;
+  text-align: center;
   font-family: "Ubuntu", sans-serif;
   color: white;
 }
 footer .footerSocialContainer {
+  grid-area: social;
+  display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: left;
+  align-items: center;
+  gap: 20px;
+  margin: 10px;
+}
+footer .footerSocialContainer p {
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  color: white;
 }
 footer .footerSocialContainer button {
+  border: 0;
+  outline: 0;
   color: rgba(0, 0, 0, 0.75);
   font-family: "Ubuntu", sans-serif;
   font-size: 25px;
@@ -201,13 +229,8 @@ footer .footerSocialContainer button {
 }
 footer .footerSocialContainer button:hover {
   transition-duration: 0.25s;
-  color: rgba(252, 177, 38, 0.8);
+  color: rgb(66, 172, 254);
   transform: skewY(-15deg);
-}
-
-#footerIcon {
-  color: white;
-  margin: 0 10px 0 1em;
 }
 
 /* RESPONSIVE DESIGN */
@@ -242,32 +265,6 @@ footer .footerSocialContainer button:hover {
   .sidebar p {
     font-size: 15px;
     line-height: 25px;
-  }
-  /* FOOTER */
-  footer {
-    display: grid;
-    height: -webkit-min-content;
-    height: -moz-min-content;
-    height: min-content;
-    grid-template-rows: auto;
-    grid-template-columns: auto;
-    grid-template-areas: "social info";
-    padding: 4px 0;
-  }
-  footer .footerSocialContainer button {
-    font-size: 12px;
-    width: 30px;
-    margin: 0px 7px;
-    grid-area: social;
-  }
-  footer .footerInfoContainer p {
-    font-size: 12px;
-    margin: 0 5px 0 0;
-    grid-area: info;
-  }
-  #footerIcon {
-    color: var(--txtColor);
-    margin: 0 5px 0 10px;
   }
 }
 /*FONTS*/
@@ -317,14 +314,97 @@ footer .footerSocialContainer button:hover {
     'Ubuntu Condensed', sans-serif;
 */
 body {
+  overflow: hidden;
+  background-color: #171717;
+}
+
+.parallax-container {
+  height: 100vh;
+  overflow-y: auto;
   overflow-x: hidden;
-  background-color: rgb(27, 27, 27);
+  perspective: 10px;
+}
+
+.parallax-background {
+  position: relative;
+  /*
+  lines below effectly center all the parallax images on the
+  page so they are stacked over one another.
+  */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 90vh;
+  z-index: -1;
+  transform-style: preserve-3d;
+}
+.parallax-background .parallax-layer {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.parallax-background .parallax-fill {
+  position: absolute;
+  background-color: #171717;
+  width: 100vw;
+  height: 100vh;
+  bottom: -110vh;
+  transform: translateZ(-2px) scale(1.21);
+}
+.parallax-background #parallax1 {
+  /*
+  <TRANSFROM TRANSLATEZ>
+  sets the 3d distance of object on the screen; this creates
+  the parallax effect: because the object is now further away
+  it will be appear smaller so scale will have to be used to
+  scale the object back to the correct size.
+  NOTE: this is relative to the prospective of the parent
+  container
+  BEHAVIOR: TRANSLATE: TRANSFROMZ
+  overrides Zindex so each parallax layer must be set accordingly
+  using this property.
+  */
+  transform: translateZ(-2px) scale(1.2);
+  z-index: -11;
+}
+.parallax-background #parallax2 {
+  transform: translateZ(-3px) scale(1.3);
+  z-index: -12;
+}
+.parallax-background #parallax3 {
+  transform: translateZ(-4px) scale(1.4);
+  z-index: -13;
+}
+.parallax-background #parallax4 {
+  margin-top: 7vh;
+  transform: translateZ(-6px) scale(1.6);
+  z-index: -14;
+}
+.parallax-background #parallax5 {
+  transform: translateZ(-8px) scale(1.8);
+  z-index: -15;
+}
+.parallax-background #parallax6 {
+  transform: translateZ(-9px) scale(1.9);
+  z-index: -16;
+}
+.parallax-background #parallax7 {
+  z-index: -17;
+  transform: translateZ(-10px) scale(2);
 }
 
 .page-main-container {
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: auto;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas: "page-hero" "page-buttons" "primary-content";
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: "page-hero page-hero page-hero" "page-buttons page-buttons page-buttons" ". primary-content .";
 }
 
 .hero-container {
@@ -351,7 +431,7 @@ body {
   grid-area: hero;
   width: 100%;
   height: 101%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgb(27, 27, 27));
+  background-image: linear-gradient(rgba(0, 0, 0, 0), #171717);
 }
 .hero-container .overlay {
   z-index: 3;
@@ -377,6 +457,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 15vw;
+  background-color: #171717;
 }
 .button-container button {
   padding: 5vw;
@@ -402,7 +483,7 @@ body {
 .category-container {
   grid-area: primary-content;
   overflow-x: hidden;
-  background-color: rgb(27, 27, 27);
+  background-color: #171717;
 }
 .category-container .synopsis-container {
   display: flex;
@@ -429,7 +510,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgb(27, 27, 27);
+  background-color: #171717;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -460,6 +541,14 @@ body {
   margin-top: 3vw;
   margin-bottom: 0vw;
   padding-left: 15px;
+}
+.category-container .content-container section #banner {
+  border: 2px solid purple;
+  width: 100%;
+  height: 15vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: -1vh;
 }
 .category-container .content-container section article {
   grid-area: article;
@@ -505,6 +594,10 @@ body {
 .category-container .content-container section article #photoR {
   width: 80%;
   transform: rotate(2deg);
+}
+.category-container .content-container section article #standardImg {
+  margin-top: 10%;
+  width: 80%;
 }
 .category-container p {
   font-size: calc(1rem + 1vw);

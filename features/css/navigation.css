@@ -10,55 +10,75 @@
     'Ubuntu', sans-serif;
     'Ubuntu Condensed', sans-serif;
 */
+.parallax-container {
+  display: grid;
+  grid-row: 1fr;
+  grid-template-areas: "nav";
+}
+
 /* NAV MENU */
 nav {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr, 2fr, 1f;
+  grid-template-rows: auto;
+  grid-template-areas: "main-nav . game-info-nav";
   z-index: 4;
   position: fixed;
   left: 0;
   width: 100vw;
   height: auto;
   text-align: left;
-  background-color: rgba(27, 25, 25, 0.55);
-  padding: 0 0 0 0;
+  padding: 0 0 0 5px;
+}
+nav .nav-button-container {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  margin: 10px;
+}
+nav #nav-main-buttons {
+  grid-area: main-nav;
+}
+nav #nav-game-info {
+  grid-area: game-info-nav;
 }
 nav #navButton {
   font-family: "Ubuntu Condensed", sans-serif;
-  font-size: 18px;
-  margin: 8px 20px;
+  font-size: 1rem;
+  padding: 0;
   height: 40px;
-  width: 150px;
+  width: 7vw;
   color: white;
   background-color: rgba(0, 0, 0, 0);
   border-radius: 2px;
-  border: 0px solid rgba(252, 177, 38, 0.8);
+  border: 0px solid white;
 }
 nav #navButton:hover {
   transition-duration: 0.25s;
   background-color: rgba(0, 0, 0, 0);
-  color: rgba(252, 177, 38, 0.8);
   transform: scale(1.1);
-  border: 2px solid rgba(252, 177, 38, 0.8);
+  border: 2px solid white;
 }
 
 /* SIDEBAR MENU */
 #buttonToggleSidebar {
   position: fixed;
+  padding: 0;
+  margin: 0;
   right: 2vw;
-  font-size: 20px;
+  font-size: 1rem;
   height: 40px;
   width: 180px;
   color: rgb(255, 255, 255);
   background-color: rgba(0, 0, 0, 0);
   text-align: center;
-  border: 2px solid rgb(255, 255, 255);
+  border: 0px solid rgb(255, 255, 255);
   transition: 0.25s;
 }
 #buttonToggleSidebar:hover {
-  border: 2px solid rgba(252, 177, 38, 0.8);
-  color: rgba(252, 177, 38, 0.8);
+  border: 2px solid rgb(66, 172, 254);
+  color: rgb(66, 172, 254);
 }
 
 .sidebar {
@@ -102,36 +122,49 @@ nav #navButton:hover {
 }
 
 footer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "social . .";
   position: fixed;
   bottom: 0%;
   left: 0%;
-  width: 100%;
+  width: 100vw;
   height: 7vh;
-  background-color: rgba(27, 25, 25, 0.55);
-  padding: 10px 34px;
   z-index: 4;
+  margin-left: 10px;
 }
 footer .footerInfoContainer {
+  grid-area: info;
   display: flex;
   flex-direction: row;
+  justify-content: left;
   align-items: center;
-  padding-bottom: 0px;
-  margin-top: 0px;
+  gap: 20px;
+  margin: 10px;
 }
 footer .footerInfoContainer p {
-  padding-left: 2vh;
-  text-align: right;
+  text-align: center;
   font-family: "Ubuntu", sans-serif;
   color: white;
 }
 footer .footerSocialContainer {
+  grid-area: social;
+  display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: left;
+  align-items: center;
+  gap: 20px;
+  margin: 10px;
+}
+footer .footerSocialContainer p {
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  color: white;
 }
 footer .footerSocialContainer button {
+  border: 0;
+  outline: 0;
   color: rgba(0, 0, 0, 0.75);
   font-family: "Ubuntu", sans-serif;
   font-size: 25px;
@@ -140,13 +173,8 @@ footer .footerSocialContainer button {
 }
 footer .footerSocialContainer button:hover {
   transition-duration: 0.25s;
-  color: rgba(252, 177, 38, 0.8);
+  color: rgb(66, 172, 254);
   transform: skewY(-15deg);
-}
-
-#footerIcon {
-  color: white;
-  margin: 0 10px 0 1em;
 }
 
 /* RESPONSIVE DESIGN */
@@ -181,31 +209,5 @@ footer .footerSocialContainer button:hover {
   .sidebar p {
     font-size: 15px;
     line-height: 25px;
-  }
-  /* FOOTER */
-  footer {
-    display: grid;
-    height: -webkit-min-content;
-    height: -moz-min-content;
-    height: min-content;
-    grid-template-rows: auto;
-    grid-template-columns: auto;
-    grid-template-areas: "social info";
-    padding: 4px 0;
-  }
-  footer .footerSocialContainer button {
-    font-size: 12px;
-    width: 30px;
-    margin: 0px 7px;
-    grid-area: social;
-  }
-  footer .footerInfoContainer p {
-    font-size: 12px;
-    margin: 0 5px 0 0;
-    grid-area: info;
-  }
-  #footerIcon {
-    color: var(--txtColor);
-    margin: 0 5px 0 10px;
   }
 }/*# sourceMappingURL=navigation.css.map */

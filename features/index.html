@@ -11,19 +11,37 @@
     <script src="https://kit.fontawesome.com/1d4d27c0b7.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- NAVIGATION MENU -->
-    <nav>
-        <button id="navButton" onclick="location.href='https://jmiller7334.mccdgm.net/web115/sassWebsite/'">Home</button>
-        <button id="navButton" onclick="location.href='https://jmiller7334.mccdgm.net/web115/sassWebsite/features'">Features</button>
-        <button id="navButton" onclick="location.href='https://jmiller7334.mccdgm.net/web115/sassWebsite/developer'">Developer</button>
-        <button id="buttonToggleSidebar" onclick="toggleSidebar()" class="sidebarButton">&#9776; Game Info</button>
-    </nav>
+
 
     <!-- --------------- -->
     <!-- PAGE CONTENT HERE -->
     <!-- --------------- -->
-    <div class="page-main-container">
+    <!-- NAVIGATION MENU -->
+    <nav>
+        <div class="nav-button-container" id="nav-main-buttons">
+            <button id="navButton" onclick="location.href='https://jmiller7334.mccdgm.net/web115/sassWebsite/'">Home</button>
+            <button id="navButton" onclick="location.href='https://jmiller7334.mccdgm.net/web115/sassWebsite/features'">Features</button>
+            <button id="navButton" onclick="location.href='https://jmiller7334.mccdgm.net/web115/sassWebsite/developer'">Developer</button>
+        </div>
+       
+        <div class="nav-button-container" id="nav-game-info">
+            <button id="buttonToggleSidebar" onclick="toggleSidebar()" class="sidebarButton">&#9776; Game Info</button>
+        </div>
+    </nav>
 
+    <div class="parallax-container">
+        <div class="parallax-background">
+            <div class="parallax-fill"></div>
+            <img src="img/parallax/parallax_1.png" class="parallax-layer" id="parallax1">
+            <img src="img/parallax/parallax_2.png" class="parallax-layer" id="parallax2">
+            <img src="img/parallax/parallax_3.png" class="parallax-layer" id="parallax3">
+            <img src="img/parallax/parallax_4.png" class="parallax-layer" id="parallax4">
+            <img src="img/parallax/parallax_5.png" class="parallax-layer" id="parallax5">
+            <img src="img/parallax/parallax_6.png" class="parallax-layer" id="parallax6">
+            <img src="img/parallax/parallax_7sat.png" class="parallax-layer" id="parallax7">
+        </div>
+
+    <div class="page-main-container">
         <div class="hero-container">
             <img src="img/coaster_hero.PNG" id="heroRides" alt="hero images">
             <img src="img/bus_stop.png" id="heroStory" alt="hero images">
@@ -209,11 +227,12 @@
             
             <div class="content-container">
                     <section>
+                        <!--<img src="img/bus_stop.png" id="banner" alt="">-->
                         <h1>Player Owned Homes</h1>
                         <article>
                             <h2>Customize!</h2>
                             <p></p>
-                            <img src="img/photo_kana.png" id="photoL" alt="">
+                            <img src="img/photo_kana.png" id="standardImg" alt="">
                         </article>
 
                         <article>
@@ -227,6 +246,7 @@
     </div>
 
     </div> <!-- page container -->
+    </div> <!-- parallax container -->
     <!-- --------------- -->
 
      <!-- SIDEBAR MENU -->
@@ -258,11 +278,9 @@
     <!-- FOOTER MENU -->
     <footer>
         <div class="footerSocialContainer">
-            <button><i class="fa fa-facebook"></i></button>
-            <button><i class="fa fa-instagram"></i></button>
+        <!--<button><i class="fa fa-facebook"></i></button>
+            <button><i class="fa fa-instagram"></i></button> -->
             <button><i class="fa fa-twitter"></i></button>
-        </div>
-        <div class="footerInfoContainer">
             <p>Coming Summer 2023</p>
         </div>
     </footer>
