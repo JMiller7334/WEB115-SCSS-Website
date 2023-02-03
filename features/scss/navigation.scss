@@ -26,13 +26,8 @@ $navFontColor: white;
 $navFontSize: 20px;
 $sidebarFontSize: 25px;
 
-.parallax-container{
-    display: grid;
-    grid-row: 1fr;
-    grid-template-areas: "nav";
-}
-
 /* NAV MENU */
+
 nav{
     display: grid;
     grid-template-columns: 1fr, 2fr, 1f;

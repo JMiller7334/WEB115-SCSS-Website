@@ -66,17 +66,25 @@ body{
 
 //PARALLAX BACKGROUND//
 .parallax-container{
-    height: 100vh; //fix height to fill screen.
-    overflow-y: auto;// allow scrolling in container not body.
-    overflow-x: hidden; //hide horizontal scrolling.
-    perspective: 10px; //set Z perspective/depth of container.
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 10px;
 }
+
+.parallax-gradient{
+    position: absolute;
+    z-index: -1;
+    width: 100vw;
+    height: 500px;
+    top: 110vh;
+    background-image: linear-gradient($bgColor, rgba(0, 0, 0, 0));
+    //border: 2px solid green;
+}
+
 .parallax-background{
     position: relative;
-    /*
-    lines below effectly center all the parallax images on the
-    page so they are stacked over one another.
-    */
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -85,17 +93,15 @@ body{
     height: 100%;
     margin-top: 90vh;
     z-index: -1;
-    //unsures 3-d properties are preserved and not lost.
     transform-style: preserve-3d;
 
-    //Holds common properties shared accross all paralax layers.
     .parallax-layer{
         position: absolute;
         height: 100%;
         width: 100%;
         object-fit: cover;
     }
-    //this hides layer movement that happen in the background
+
     .parallax-fill{
         position: absolute;
         background-color: #171717;
@@ -151,7 +157,6 @@ body{
     }  
 }
 
-
 .page-main-container{
     position: absolute;
     top: 0%;
@@ -179,8 +184,7 @@ body{
         z-index: 1;
         grid-area: hero;
         width: 100%;
-        height: 60vw;
-        max-height: 71vh;
+        height: 100vh;
 
         object-fit: cover;
         object-position: 10%;
@@ -214,14 +218,15 @@ body{
         z-index: 0;
     }
 }
+
+
 .button-container{
     grid-area: page-buttons;
-
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 15vw; //orginal 15vw
+    height: 15vh; //orginal 15vw
 
     background-color: $bgColor;
 
@@ -436,14 +441,30 @@ body{
  @media only screen and (min-width: 1000px){
     .page-main-container{
         display: grid;
-        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-columns:1fr 2fr 1fr;
         grid-template-areas: 
         "page-hero page-hero page-hero"
         "page-buttons page-buttons page-buttons"
-        ". primary-content .";
+        "l-gradient primary-content r-gradient";
+
+        .l-gradient{
+            height: auto;
+            width: auto;
+
+            grid-area: l-gradient;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0) , $bgColor);
+        }
+
+        .r-gradient{
+            height: auto;
+            width: auto;
+
+            grid-area: r-gradient;
+            background-image: linear-gradient(to right, $bgColor, rgba(0, 0, 0, 0));
+        }
 
         .button-container{
-            height: 6.6vw;
+            height: 10vh;
             button{
                 padding: 1.5vw;
             }

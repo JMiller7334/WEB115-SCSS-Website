@@ -10,12 +10,6 @@
     'Ubuntu', sans-serif;
     'Ubuntu Condensed', sans-serif;
 */
-.parallax-container {
-  display: grid;
-  grid-row: 1fr;
-  grid-template-areas: "nav";
-}
-
 /* NAV MENU */
 nav {
   display: grid;
