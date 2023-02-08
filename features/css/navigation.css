@@ -125,8 +125,10 @@ footer {
   left: 0%;
   width: 100vw;
   height: 7vh;
+  min-height: 50px;
   z-index: 4;
   margin-left: 10px;
+  pointer-events: none;
 }
 footer .footerInfoContainer {
   grid-area: info;
@@ -171,12 +173,13 @@ footer .footerSocialContainer button:hover {
   transform: skewY(-15deg);
 }
 
-/* RESPONSIVE DESIGN */
+/* RESPONSIVE -- MOBILE DESIGN */
 @media only screen and (max-width: 900px) {
   nav {
-    height: -webkit-max-content;
-    height: -moz-max-content;
-    height: max-content;
+    height: auto;
+    background-color: rgba(27, 25, 25, 0.55);
+    padding-bottom: 1rem;
+    width: 100vw;
   }
   nav #navButton {
     height: auto;
@@ -185,12 +188,25 @@ footer .footerSocialContainer button:hover {
     width: 80px;
     border-radius: 7px;
   }
+  footer {
+    left: 0%;
+    display: grid;
+    width: 100vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "social";
+    background-color: rgba(27, 25, 25, 0.55);
+    margin-left: 0;
+  }
   #buttonToggleSidebar {
     transform: rotate(90deg);
     font-size: 15px;
-    top: 75vh;
+    top: 50vh;
     right: -80.5px;
     border-radius: 0px 0px 20px 20px;
+  }
+  #buttonToggleSidebar:hover {
+    border: 0px;
   }
   .sidebar {
     top: 0;

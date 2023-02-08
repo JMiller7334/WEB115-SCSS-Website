@@ -148,7 +148,6 @@ footer{
     //ANIMATION//
     //opacity: 0;
     //animation: animNavFade 0.5s linear 3.2s 1 normal forwards;
-
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: auto;
@@ -160,8 +159,10 @@ footer{
 
     width: 100vw;
     height: 7vh;
+    min-height: 50px;
     z-index: 4;
     margin-left: 10px;
+    pointer-events: none;
 
     .footerInfoContainer { // not used right now.
         grid-area: info;
@@ -211,10 +212,13 @@ footer{
     }
 }
 
- /* RESPONSIVE DESIGN */
+ /* RESPONSIVE -- MOBILE DESIGN */
 @media only screen and (max-width: 900px){
     nav {
-        height: max-content;
+        height: auto;
+        background-color: $navColorMain;
+        padding-bottom: 1rem;
+        width: 100vw;
         #navButton {
             height: auto;
             margin: 5px;
@@ -225,15 +229,30 @@ footer{
         }
     }
 
+    footer{
+        left: 0%;
+        display: grid;
+        width: 100vw;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 'social';
+        background-color: $navColorMain;
+        margin-left: 0;
+    }
+
     #buttonToggleSidebar {
         transform: rotate(90deg);
         font-size: 15px;
-        top: 75vh;
+        top: 50vh;
         right: -80.5px;
         //margin: 0;
         //padding: 0;
         //border: 2px solid $navFontColor;
         border-radius: 0px 0px 20px 20px;
+
+        &:hover {
+            border: 0px;
+        }
     }
     .sidebar{
         top: 0; //4vh

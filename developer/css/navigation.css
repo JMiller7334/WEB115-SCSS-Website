@@ -152,7 +152,6 @@ footer .footerSocialContainer button:hover {
 /* RESPONSIVE DESIGN */
 @media only screen and (max-width: 900px) {
   nav {
-    height: -webkit-max-content;
     height: -moz-max-content;
     height: max-content;
   }
@@ -185,7 +184,6 @@ footer .footerSocialContainer button:hover {
   /* FOOTER */
   footer {
     display: grid;
-    height: -webkit-min-content;
     height: -moz-min-content;
     height: min-content;
     grid-template-rows: auto;

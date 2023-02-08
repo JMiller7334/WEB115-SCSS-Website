@@ -71,14 +71,6 @@ table {
     'Ubuntu', sans-serif;
     'Ubuntu Condensed', sans-serif;
 */
-@-webkit-keyframes animFooterFade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 @keyframes animFooterFade {
   from {
     opacity: 0;
@@ -260,10 +252,8 @@ footer .footerSocialContainer button:hover {
   /* FOOTER */
   footer {
     opacity: 0;
-    -webkit-animation: animFooterFade 0.5s linear 3.2s 1 normal forwards;
-            animation: animFooterFade 0.5s linear 3.2s 1 normal forwards;
+    animation: animFooterFade 0.5s linear 3.2s 1 normal forwards;
     display: grid;
-    height: -webkit-min-content;
     height: -moz-min-content;
     height: min-content;
     grid-template-rows: auto;
@@ -296,22 +286,9 @@ footer .footerSocialContainer button:hover {
     'Ubuntu', sans-serif;
     'Ubuntu Condensed', sans-serif;
 */
-@-webkit-keyframes animSlide {
-  100% {
-    margin: 0 0%;
-  }
-}
 @keyframes animSlide {
   100% {
     margin: 0 0%;
-  }
-}
-@-webkit-keyframes animFade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }
 @keyframes animFade {
@@ -322,34 +299,12 @@ footer .footerSocialContainer button:hover {
     opacity: 1;
   }
 }
-@-webkit-keyframes animOpacity {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 0.15;
-  }
-}
 @keyframes animOpacity {
   from {
     opacity: 0;
   }
   to {
     opacity: 0.15;
-  }
-}
-@-webkit-keyframes animDuelFade {
-  0% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
   }
 }
 @keyframes animDuelFade {
@@ -429,7 +384,6 @@ body {
   padding: 1rem;
   border-radius: 20px;
   background-color: rgba(27, 25, 25, 0.55);
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
 }
@@ -492,8 +446,7 @@ body {
 }
 @media only screen and (max-width: 900px) and (orientation: landscape) {
   html {
-    -ms-scroll-snap-type: y mandatory;
-        scroll-snap-type: y mandatory;
+    scroll-snap-type: y mandatory;
     overflow-y: scroll;
     overflow-x: hidden;
   }
@@ -530,49 +483,42 @@ body {
 @media only screen and (max-width: 900px) {
   article h1 {
     opacity: 1;
-    -webkit-animation: animDuelFade 1s linear 0.1s 1 normal both;
-            animation: animDuelFade 1s linear 0.1s 1 normal both;
+    animation: animDuelFade 1s linear 0.1s 1 normal both;
   }
 }
 @media only screen and (max-width: 900px) {
   #gameLogo {
     opacity: 0;
-    -webkit-animation: animFade 0.5s linear 3.5s 1 normal both;
-            animation: animFade 0.5s linear 3.5s 1 normal both;
+    animation: animFade 0.5s linear 3.5s 1 normal both;
   }
 }
 @media only screen and (max-width: 900px) {
   .overlay {
-    -webkit-animation: animOpacity 0.5s linear 3.2s 1 normal forwards;
-            animation: animOpacity 0.5s linear 3.2s 1 normal forwards;
+    animation: animOpacity 0.5s linear 3.2s 1 normal forwards;
   }
 }
 @media only screen and (max-width: 900px) {
   #top img {
     margin: 0px 100%;
-    -webkit-animation: animSlide 0.5s linear 1.5s 1 normal forwards;
-            animation: animSlide 0.5s linear 1.5s 1 normal forwards;
+    animation: animSlide 0.5s linear 1.5s 1 normal forwards;
   }
 }
 @media only screen and (max-width: 900px) {
   #mid1 img {
     margin: 0px 100%;
-    -webkit-animation: animSlide 0.5s linear 1.75s 1 normal forwards;
-            animation: animSlide 0.5s linear 1.75s 1 normal forwards;
+    animation: animSlide 0.5s linear 1.75s 1 normal forwards;
   }
 }
 @media only screen and (max-width: 900px) {
   #mid2 img {
     margin: 0px 100%;
-    -webkit-animation: animSlide 0.5s linear 2s 1 normal forwards;
-            animation: animSlide 0.5s linear 2s 1 normal forwards;
+    animation: animSlide 0.5s linear 2s 1 normal forwards;
   }
 }
 @media only screen and (max-width: 900px) {
   #low img {
     margin: 0px 100%;
-    -webkit-animation: animSlide 0.5s linear 2.25s 1 normal forwards;
-            animation: animSlide 0.5s linear 2.25s 1 normal forwards;
+    animation: animSlide 0.5s linear 2.25s 1 normal forwards;
   }
 }
 @media only screen and (max-width: 900px) {
@@ -645,38 +591,31 @@ body {
   article h1 {
     position: absolute;
     opacity: 0;
-    -webkit-animation: animDuelFade 1.7s linear 0.1s 1 normal both;
-            animation: animDuelFade 1.7s linear 0.1s 1 normal both;
+    animation: animDuelFade 1.7s linear 0.1s 1 normal both;
   }
   #gameLogo {
     height: auto;
     width: 30vh;
     opacity: 0;
-    -webkit-animation: animFade 0.6s linear 3.5s 1 normal forwards;
-            animation: animFade 0.6s linear 3.5s 1 normal forwards;
+    animation: animFade 0.6s linear 3.5s 1 normal forwards;
   }
   .overlay {
-    -webkit-animation: animOpacity 0.6s linear 3.2s 1 normal forwards;
-            animation: animOpacity 0.6s linear 3.2s 1 normal forwards;
+    animation: animOpacity 0.6s linear 3.2s 1 normal forwards;
   }
   #top img {
     margin: 0px 300%;
-    -webkit-animation: animSlide 0.6s linear 1.5s 1 normal forwards;
-            animation: animSlide 0.6s linear 1.5s 1 normal forwards;
+    animation: animSlide 0.6s linear 1.5s 1 normal forwards;
   }
   #mid1 img {
     margin: 0px 300%;
-    -webkit-animation: animSlide 0.6s linear 1.75s 1 normal forwards;
-            animation: animSlide 0.6s linear 1.75s 1 normal forwards;
+    animation: animSlide 0.6s linear 1.75s 1 normal forwards;
   }
   #mid2 img {
     margin: 0px 300%;
-    -webkit-animation: animSlide 0.6s linear 2s 1 normal forwards;
-            animation: animSlide 0.6s linear 2s 1 normal forwards;
+    animation: animSlide 0.6s linear 2s 1 normal forwards;
   }
   html {
-    -ms-scroll-snap-type: y mandatory;
-        scroll-snap-type: y mandatory;
+    scroll-snap-type: y mandatory;
     overflow-y: scroll;
     overflow-x: hidden;
   }

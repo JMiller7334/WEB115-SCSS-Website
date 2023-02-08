@@ -213,7 +213,6 @@ footer .footerSocialContainer button:hover {
 /* RESPONSIVE DESIGN */
 @media only screen and (max-width: 900px) {
   nav {
-    height: -webkit-max-content;
     height: -moz-max-content;
     height: max-content;
   }
@@ -246,7 +245,6 @@ footer .footerSocialContainer button:hover {
   /* FOOTER */
   footer {
     display: grid;
-    height: -webkit-min-content;
     height: -moz-min-content;
     height: min-content;
     grid-template-rows: auto;
@@ -272,21 +270,9 @@ footer .footerSocialContainer button:hover {
 }
 /*FONTS*/
 /*VARIABLES*/
-@-webkit-keyframes anim-slide {
-  100% {
-    left: 0;
-  }
-}
 @keyframes anim-slide {
   100% {
     left: 0;
-  }
-}
-@-webkit-keyframes anim-select-button {
-  100% {
-    font-size: calc(1rem + 3vw);
-    text-decoration: overline;
-    color: rgba(252, 177, 38, 0.8);
   }
 }
 @keyframes anim-select-button {
@@ -294,12 +280,6 @@ footer .footerSocialContainer button:hover {
     font-size: calc(1rem + 3vw);
     text-decoration: overline;
     color: rgba(252, 177, 38, 0.8);
-  }
-}
-@-webkit-keyframes anim-deselect-button {
-  100% {
-    font-size: calc(1rem + 0.25vw);
-    text-decoration: none;
   }
 }
 @keyframes anim-deselect-button {
@@ -389,12 +369,10 @@ body {
   text-decoration: overline;
 }
 .button-container .isSelected {
-  -webkit-animation: anim-select-button 0.1s linear 0s 1 normal forwards;
-          animation: anim-select-button 0.1s linear 0s 1 normal forwards;
+  animation: anim-select-button 0.1s linear 0s 1 normal forwards;
 }
 .button-container .notSelected {
-  -webkit-animation: anim-deselect-button 0.1s linear 0s 1 normal forwards;
-          animation: anim-deselect-button 0.1s linear 0s 1 normal forwards;
+  animation: anim-deselect-button 0.1s linear 0s 1 normal forwards;
 }
 
 .category-container {
@@ -403,14 +381,12 @@ body {
   background-color: rgb(27, 27, 27);
   left: 200vw;
   padding-left: 30px;
-  -webkit-animation: anim-slide 1s linear 0s 1 normal forwards;
-          animation: anim-slide 1s linear 0s 1 normal forwards;
+  animation: anim-slide 1s linear 0s 1 normal forwards;
 }
 .category-container .synopsis-container {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
   margin-bottom: calc(1rem + 10vw);
@@ -455,7 +431,6 @@ body {
   text-align: left;
   font-size: calc(1rem + 1.5vw);
   width: 100%;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
   margin-bottom: 20px;
@@ -479,7 +454,6 @@ body {
   grid-column-start: 1;
   grid-column-end: 2;
   width: 95%;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
 }

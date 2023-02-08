@@ -18,8 +18,13 @@ function toggleSidebar() {
   }
 
   //ToggleContent//
-  var current = "Story";
-  let contentTypes = ["Story", "Rides", "Features"];
+  let current = "Story";
+  const contentTypes = ["Story", "Rides", "Features"];
+  const contentTexts = {
+    Story:"Play the story, live the Adventure", 
+    Rides:"Featuring over 20 epic rides", 
+    Features: "Explore a world of thrills"};
+  
   function toggleContent(request){
     if (request !== current){
         // hides all content //
@@ -36,7 +41,20 @@ function toggleSidebar() {
         document.getElementById('category' + request).style.display = "block";
         document.getElementById('button'+ request).classList = ("isSelected");
         document.getElementById('hero'+ request).style.zIndex = '1';
+        document.getElementById('heroText').innerHTML = contentTexts[request];
         //------------------------------------------------------------//
         current = request;
     }
   }
+
+//NOTE: func below handles clearing the intro screen after animations play.
+const contentContainer = document.getElementById("contentContainer");
+contentContainer.addEventListener('animationend', (event) => {
+    console.log("jsMain: animEnd:", event.animationName);
+    if (event.animationName === 'anim-appear'){
+        console.log('jsMain: removing introContainer')
+        if (document.getElementById('introContainer')){
+            document.getElementById('introContainer').remove();
+        }
+    }
+ });

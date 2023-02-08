@@ -7,6 +7,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Ubuntu&family=Ubuntu+Condensed&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Ubuntu&family=Ubuntu+Condensed&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Ubuntu&family=Ubuntu+Condensed&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -186,8 +188,10 @@ footer {
   left: 0%;
   width: 100vw;
   height: 7vh;
+  min-height: 50px;
   z-index: 4;
   margin-left: 10px;
+  pointer-events: none;
 }
 footer .footerInfoContainer {
   grid-area: info;
@@ -232,12 +236,13 @@ footer .footerSocialContainer button:hover {
   transform: skewY(-15deg);
 }
 
-/* RESPONSIVE DESIGN */
+/* RESPONSIVE -- MOBILE DESIGN */
 @media only screen and (max-width: 900px) {
   nav {
-    height: -webkit-max-content;
-    height: -moz-max-content;
-    height: max-content;
+    height: auto;
+    background-color: rgba(27, 25, 25, 0.55);
+    padding-bottom: 1rem;
+    width: 100vw;
   }
   nav #navButton {
     height: auto;
@@ -246,12 +251,25 @@ footer .footerSocialContainer button:hover {
     width: 80px;
     border-radius: 7px;
   }
+  footer {
+    left: 0%;
+    display: grid;
+    width: 100vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "social";
+    background-color: rgba(27, 25, 25, 0.55);
+    margin-left: 0;
+  }
   #buttonToggleSidebar {
     transform: rotate(90deg);
     font-size: 15px;
-    top: 75vh;
+    top: 50vh;
     right: -80.5px;
     border-radius: 0px 0px 20px 20px;
+  }
+  #buttonToggleSidebar:hover {
+    border: 0px;
   }
   .sidebar {
     top: 0;
@@ -267,10 +285,350 @@ footer .footerSocialContainer button:hover {
   }
 }
 /*FONTS*/
-/*VARIABLES*/
-@-webkit-keyframes anim-slide {
+@keyframes intro-animSlide {
   100% {
-    left: 0;
+    margin: 0 0%;
+  }
+}
+@keyframes intro-animFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes intro-animOpacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.15;
+  }
+}
+@keyframes intro-animDuelFade {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    display: no;
+  }
+}
+.intro-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -100;
+  display: grid;
+  grid-template-areas: "main";
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+.intro-container .intro-article {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+.intro-container .intro-article img { /*main logo*/
+  z-index: -6;
+  margin-top: 38vh;
+  height: auto;
+  width: 42%;
+}
+.intro-container .intro-article h5 {
+  opacity: 0;
+  animation: intro-animDuelFade 2s linear 0s 1 normal forwards;
+  z-index: -11;
+  font-family: "Ubuntu Condensed", sans-serif;
+  font-size: 3vh;
+  color: rgb(255, 255, 255);
+}
+
+.galleryContainer {
+  z-index: -10;
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "top" "mid1" "mid2" "low";
+  row-gap: 0px;
+  -moz-column-gap: 0px;
+       column-gap: 0px;
+  height: 100vh;
+}
+.galleryContainer .row {
+  display: grid;
+  grid-template-areas: "left center right";
+  grid-template-columns: auto;
+  grid-template-rows: 1fr;
+  height: 100%;
+  width: 100%;
+  row-gap: 0px;
+  -moz-column-gap: 0px;
+       column-gap: 0px;
+}
+.galleryContainer .row .overlay {
+  z-index: -5;
+  background-color: rgb(0, 0, 0);
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+.galleryContainer .row .overlayFull {
+  z-index: -5;
+  background-color: rgb(0, 0, 0);
+  opacity: 0.17;
+  width: 100%;
+  height: 100%;
+}
+.galleryContainer .row img {
+  z-index: -10;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.galleryContainer .img-0pan {
+  -o-object-position: 0%;
+     object-position: 0%;
+}
+.galleryContainer .img-100pan {
+  -o-object-position: 100%;
+     object-position: 100%;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+/* --- MOBILE SPECIFIC --- */
+@media only screen and (max-width: 900px) {
+  /* IDs ROWS */
+  /* IDs IMGs*/
+}
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+  #gameLogo {
+    margin-top: 15;
+    height: auto;
+    width: 20%;
+  }
+  .intro-container {
+    overflow: visible;
+  }
+  .galleryContainer {
+    scroll-snap-align: center;
+  }
+  .galleryContainer #top {
+    height: 100vh;
+  }
+  .galleryContainer #mid1 {
+    display: none;
+  }
+  .galleryContainer #mid2 {
+    display: none;
+  }
+  .galleryContainer #low {
+    display: none;
+  }
+  .galleryContainer #full {
+    scroll-snap-align: center;
+    display: grid;
+    height: 100vh;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #gameLogo {
+    opacity: 0;
+    animation: intro-animFade 0.5s linear 3.5s 1 normal forwards;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .overlay {
+    animation: intro-animOpacity 0.5s linear 3.2s 1 normal forwards;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #top img {
+    margin: 0px 100%;
+    animation: intro-animSlide 0.5s linear 1.5s 1 normal forwards;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #mid1 img {
+    margin: 0px 100%;
+    animation: intro-animSlide 0.5s linear 1.75s 1 normal forwards;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #mid2 img {
+    margin: 0px 100%;
+    animation: intro-animSlide 0.5s linear 2s 1 normal forwards;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #low img {
+    margin: 0px 100%;
+    animation: intro-animSlide 0.5s linear 2.25s 1 normal forwards;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #top {
+    grid-area: top;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #mid1 {
+    grid-area: mid1;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #mid2 {
+    grid-area: mid2;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #low {
+    grid-area: low;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #full {
+    display: none;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #row-left {
+    grid-area: left;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #row-center {
+    display: none;
+    grid-area: center;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #row-right {
+    display: none;
+    grid-area: right;
+  }
+}
+/* --- DESKTOP/PC/Large Tablet --- */
+@media only screen and (min-width: 900px) {
+  .intro-container {
+    overflow: visible;
+    display: grid;
+    grid-template-areas: "main";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: auto;
+    height: auto;
+  }
+  .galleryContainer {
+    overflow: visible;
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 33.5% 33.5% 33.5% auto;
+    grid-template-areas: "top" "mid1" "mid2" "low";
+    row-gap: 0px;
+    -moz-column-gap: 0px;
+         column-gap: 0px;
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: center;
+  }
+  .intro-article h5 {
+    position: absolute;
+  }
+  #gameLogo {
+    height: auto;
+    width: 30vh;
+    opacity: 0;
+    animation: intro-animFade 0.6s linear 3.5s 1 normal forwards;
+  }
+  .overlay {
+    animation: intro-animOpacity 0.6s linear 3.2s 1 normal forwards;
+  }
+  #top img {
+    margin: 0px 300%;
+    animation: intro-animSlide 0.6s linear 1.5s 1 normal forwards;
+  }
+  #mid1 img {
+    margin: 0px 300%;
+    animation: intro-animSlide 0.6s linear 1.75s 1 normal forwards;
+  }
+  #mid2 img {
+    margin: 0px 300%;
+    animation: intro-animSlide 0.6s linear 2s 1 normal forwards;
+  }
+  .intro-container {
+    display: grid;
+    grid-template-areas: "main";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+    height: 100%;
+  }
+  .intro-container .intro-article {
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+  .intro-container .intro-article img { /*main logo*/
+    margin-bottom: 12vh;
+    width: 17%;
+  }
+  /* IDs ROWS */
+  #top {
+    grid-area: top;
+  }
+  #mid1 {
+    grid-area: mid1;
+  }
+  #mid2 {
+    grid-area: mid2;
+  }
+  #low {
+    display: none;
+  }
+  #full {
+    scroll-snap-align: center;
+    height: 100vh;
+    width: 100vw;
+  }
+  /* IDs IMGs*/
+  #row-left {
+    grid-area: left;
+  }
+  #row-center {
+    display: inline;
+    grid-area: center;
+  }
+  #row-right {
+    display: inline;
+    grid-area: right;
+  }
+}
+/*FONTS*/
+/*VARIABLES*/
+@keyframes anim-appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 @keyframes anim-slide {
@@ -278,29 +636,16 @@ footer .footerSocialContainer button:hover {
     left: 0;
   }
 }
-@-webkit-keyframes anim-select-button {
-  100% {
-    font-size: calc(2rem + 100%);
-    text-decoration: overline;
-    color: rgba(252, 177, 38, 0.8);
-  }
-}
 @keyframes anim-select-button {
   100% {
-    font-size: calc(2rem + 100%);
+    font-size: calc(1rem + 100%);
     text-decoration: overline;
-    color: rgba(252, 177, 38, 0.8);
-  }
-}
-@-webkit-keyframes anim-deselect-button {
-  100% {
-    font-size: calc(2rem + 0.25%);
-    text-decoration: none;
+    color: rgb(66, 172, 254);
   }
 }
 @keyframes anim-deselect-button {
   100% {
-    font-size: calc(2rem + 0.25%);
+    font-size: calc(1rem + 0.25%);
     text-decoration: none;
   }
 }
@@ -313,102 +658,33 @@ footer .footerSocialContainer button:hover {
     'Ubuntu Condensed', sans-serif;
 */
 body {
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
   background-color: #171717;
 }
 
 .parallax-container {
+  opacity: 0;
+  animation: anim-appear 1s linear 4.5s 1 normal both;
   height: 100vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-  perspective: 10px;
-}
-
-.parallax-gradient {
-  position: absolute;
-  z-index: -1;
   width: 100vw;
-  height: 500px;
-  top: 110vh;
-  background-image: linear-gradient(#171717, rgba(0, 0, 0, 0));
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .parallax-background {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  margin-top: 90vh;
-  z-index: -1;
-  transform-style: preserve-3d;
-}
-.parallax-background .parallax-layer {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.parallax-background .parallax-fill {
-  position: absolute;
-  background-color: #171717;
-  width: 100vw;
-  height: 100vh;
-  bottom: -110vh;
-  transform: translateZ(-2px) scale(1.21);
-}
-.parallax-background #parallax1 {
-  /*
-  <TRANSFROM TRANSLATEZ>
-  sets the 3d distance of object on the screen; this creates
-  the parallax effect: because the object is now further away
-  it will be appear smaller so scale will have to be used to
-  scale the object back to the correct size.
-  NOTE: this is relative to the prospective of the parent
-  container
-  BEHAVIOR: TRANSLATE: TRANSFROMZ
-  overrides Zindex so each parallax layer must be set accordingly
-  using this property.
-  */
-  transform: translateZ(-2px) scale(1.2);
-  z-index: -11;
-}
-.parallax-background #parallax2 {
-  transform: translateZ(-3px) scale(1.3);
-  z-index: -12;
-}
-.parallax-background #parallax3 {
-  transform: translateZ(-4px) scale(1.4);
-  z-index: -13;
-}
-.parallax-background #parallax4 {
-  margin-top: 7vh;
-  transform: translateZ(-6px) scale(1.6);
-  z-index: -14;
-}
-.parallax-background #parallax5 {
-  transform: translateZ(-8px) scale(1.8);
-  z-index: -15;
-}
-.parallax-background #parallax6 {
-  transform: translateZ(-9px) scale(1.9);
-  z-index: -16;
-}
-.parallax-background #parallax7 {
-  z-index: -17;
-  transform: translateZ(-10px) scale(2);
+  display: none;
 }
 
 .page-main-container {
+  overflow: hidden;
   position: absolute;
   top: 0%;
-  width: 100%;
+  width: 100vw;
   height: auto;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-areas: "page-hero page-hero page-hero" "page-buttons page-buttons page-buttons" ". primary-content .";
+  grid-template-columns: 1fr;
+  grid-template-areas: "page-hero" "page-buttons" "primary-content";
 }
 
 .hero-container {
@@ -419,82 +695,103 @@ body {
   grid-template-rows: 1fr;
   grid-template-areas: "hero";
 }
+.hero-container .hero-text {
+  z-index: 3;
+  grid-area: hero;
+  height: 65%;
+  width: 60%;
+  font-size: 2em;
+  font-family: "Permanent Marker", cursive;
+  color: white;
+  margin: 2.25em 2rem;
+  opacity: 0;
+  animation: intro-animFade 0.7s linear 6s 1 normal forwards;
+}
 .hero-container img {
   z-index: 1;
   grid-area: hero;
   width: 100%;
-  height: 100vh;
+  height: 85vh;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: 10%;
      object-position: 10%;
 }
-.hero-container .gradient {
+.hero-container .upper-gradient {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  width: 100vw;
+  height: 30vh;
+  top: 0;
+  background-image: linear-gradient(#171717, rgba(0, 0, 0, 0));
+}
+.hero-container .lower-gradient {
   z-index: 2;
   grid-area: hero;
   width: 100%;
-  height: 101%;
+  height: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0), #171717);
 }
-.hero-container .overlay {
-  z-index: 3;
-  grid-area: hero;
-  width: 100%;
-  height: 100%;
-  opacity: 0.25;
-}
 .hero-container #heroStory {
+  -o-object-position: 10%;
+     object-position: 10%;
   z-index: 1;
 }
 .hero-container #heroRides {
+  -o-object-position: 50%;
+     object-position: 50%;
   z-index: 0;
 }
 .hero-container #heroFeatures {
+  -o-object-position: 50%;
+     object-position: 50%;
   z-index: 0;
+  /*filter: brightness(110%);
+  filter: contrast(110%);
+  filter: saturate(120%);*/
 }
 
 .button-container {
   grid-area: page-buttons;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: start;
   justify-content: center;
+  width: 100vw;
   height: 15vh;
   background-color: #171717;
 }
 .button-container button {
   padding: 5vw;
   font-family: "Permanent Marker", cursive;
+  font-size: 1px;
   color: white;
   background-color: rgba(255, 255, 255, 0);
   border: 0px;
 }
 .button-container button:hover {
   transition: 0.25s;
-  color: rgba(252, 177, 38, 0.8);
+  color: rgb(66, 172, 254);
   text-decoration: overline;
 }
 .button-container .isSelected {
-  -webkit-animation: anim-select-button 0.1s linear 0s 1 normal forwards;
-          animation: anim-select-button 0.1s linear 0s 1 normal forwards;
+  animation: anim-select-button 0.1s linear 0s 1 normal forwards;
 }
 .button-container .notSelected {
-  -webkit-animation: anim-deselect-button 0.1s linear 0s 1 normal forwards;
-          animation: anim-deselect-button 0.1s linear 0s 1 normal forwards;
+  animation: anim-deselect-button 0.1s linear 0s 1 normal forwards;
 }
 
 .category-container {
-  grid-area: primary-content;
   overflow-x: hidden;
   background-color: #171717;
 }
 .category-container .synopsis-container {
   display: flex;
   flex-direction: column;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
-  margin-top: 50px;
+  margin-top: 0;
   margin-bottom: 50px;
 }
 .category-container .synopsis-container h1 {
@@ -538,7 +835,6 @@ body {
   text-align: left;
   font-size: calc(1rem + 1.5vw);
   width: 100%;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
   margin-top: 3vw;
@@ -573,7 +869,6 @@ body {
   grid-column-start: 1;
   grid-column-end: 2;
   width: 95%;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
   padding: 1vw 0px;
@@ -622,11 +917,81 @@ body {
   display: none;
 }
 
-/* RESPONSIVE DESIGN */
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 900px), only screen and (orientation: landscape) {
+  body {
+    overflow: hidden;
+  }
+  .parallax-container {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 10px;
+  }
+  .parallax-gradient {
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100vw;
+    height: 500px;
+    top: 110vh;
+    background-image: linear-gradient(#171717, rgba(0, 0, 0, 0));
+  }
+  .parallax-background {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 90vh;
+    z-index: -1;
+    transform-style: preserve-3d;
+  }
+  .parallax-background .parallax-layer {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .parallax-background .parallax-fill {
+    position: absolute;
+    background-color: #171717;
+    width: 100vw;
+    height: 100%;
+    bottom: -110vh;
+    transform: translateZ(-2px) scale(1.21);
+  }
+  .parallax-background #parallax1 {
+    transform: translateZ(-2px) scale(1.2);
+  }
+  .parallax-background #parallax2 {
+    transform: translateZ(-3px) scale(1.3);
+  }
+  .parallax-background #parallax3 {
+    transform: translateZ(-4px) scale(1.4);
+  }
+  .parallax-background #parallax4 {
+    margin-top: 7vh;
+    transform: translateZ(-6px) scale(1.6);
+  }
+  .parallax-background #parallax5 {
+    transform: translateZ(-8px) scale(1.8);
+  }
+  .parallax-background #parallax6 {
+    transform: translateZ(-9px) scale(1.9);
+  }
+  .parallax-background #parallax7 {
+    transform: translateZ(-10px) scale(2);
+  }
+  .hero-container img {
+    height: 85vh;
+  }
   .page-main-container {
+    top: 0;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto;
     grid-template-areas: "page-hero page-hero page-hero" "page-buttons page-buttons page-buttons" "l-gradient primary-content r-gradient";
   }
   .page-main-container .l-gradient {
@@ -642,7 +1007,7 @@ body {
     background-image: linear-gradient(to right, #171717, rgba(0, 0, 0, 0));
   }
   .page-main-container .button-container {
-    height: 10vh;
+    height: 25vh;
   }
   .page-main-container .button-container button {
     padding: 1.5vw;

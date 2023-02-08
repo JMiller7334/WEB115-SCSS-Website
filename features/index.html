@@ -12,6 +12,10 @@
 </head>
 <body>
 
+    <!-- --------------- -->
+    <!-- INTRO CONTENT -->
+    <!-- --------------- -->
+
 
     <!-- --------------- -->
     <!-- PAGE CONTENT HERE -->
@@ -28,7 +32,56 @@
             <button id="buttonToggleSidebar" onclick="toggleSidebar()" class="sidebarButton">&#9776; Game Info</button>
         </div>
     </nav>
-    <div class="parallax-container">
+
+    <div class="intro-container" id="introContainer">
+        <div class="intro-article">
+            <img src="img/intro/gameLogo_white.png" alt="gameLogo" id="gameLogo">
+            <h5>Welcome To The Project..</h5>
+        </div>
+
+        <div class="galleryContainer" id="galleryContainer">
+            <div class="row" id="top">
+                <div class="overlay" id="row-left"></div>
+                <img src="img/intro/BftbPromo.PNG" id="row-left">
+
+                <div class="overlay" id="row-center"></div>
+                <img src="img/intro/PhoenixPromo.PNG" id="row-center" class="img-0pan">
+
+                <div class="overlay" id="row-right"></div>
+                <img src="img/intro/SoaringSkyPromo2.PNG" id="row-right" class="img-0pan">
+            </div>
+    
+            <div class="row" id="mid1">
+                <div class="overlay" id="row-left"></div>
+                <img src="img/intro/ReaperPromo.PNG" id="row-left">
+
+                <div class="overlay" id="row-center"></div>
+                <img src="img/intro/TreeHouse.PNG" id="row-center">
+
+                <div class="overlay" id="row-right"></div>
+                <img src="img/intro/Parkinglot.PNG" id="row-right">
+            </div>
+    
+            <div class="row" id="mid2">
+                <div class="overlay" id="row-left"></div>
+                <img src="img/intro/EndBringerFront.PNG" id="row-left">
+
+                <div class="overlay" id="row-center"></div>
+                <img src="img/intro/parkWyvernFront.PNG" id="row-center">
+
+                <div class="overlay" id="row-right"></div>
+                <img src="img/intro/CliffHangerFront.PNG" id="row-right" class="img-0pan">
+            </div>
+    
+            <div class="row" id="low">
+                <div class="overlay" id="row-left"></div>
+                <img src="img/intro/CliffHangerFront.PNG" id="row-left" class="img-0pan">
+                <!--row low is not used in desktop/PC-->
+            </div>
+        </div>
+    </div>
+
+    <div class="parallax-container" id="contentContainer">
         <div class="parallax-background">
             <div class="parallax-fill"></div>
             <img src="img/parallax/parallax_1.png" class="parallax-layer" id="parallax1">
@@ -37,7 +90,7 @@
             <img src="img/parallax/parallax_4.png" class="parallax-layer" id="parallax4">
             <img src="img/parallax/parallax_5.png" class="parallax-layer" id="parallax5">
             <img src="img/parallax/parallax_6.png" class="parallax-layer" id="parallax6">
-            <img src="img/parallax/parallax_7sat.png" class="parallax-layer" id="parallax7">
+            <img src="img/parallax/parallax_7blue.png" class="parallax-layer" id="parallax7">
         </div>
 
     <div class="page-main-container">
@@ -47,9 +100,11 @@
         <div class="hero-container">
             <img src="img/coaster_hero.PNG" id="heroRides" alt="hero images">
             <img src="img/bus_stop.png" id="heroStory" alt="hero images">
-            <img src="" id="heroFeatures" alt="hero images">
-            <div class="gradient"></div>
-            <div class="overlay"></div>
+            <img src="img/intro/EndBringerFront.PNG" id="heroFeatures" alt="hero images">
+            <div class="lower-gradient"></div>
+            <div class="upper-gradient"></div>
+
+            <div class="hero-text" id="heroText">Play the story, live the adventure</div>
         </div>
         <div class="parallax-gradient"></div>
         <div class="button-container">
@@ -249,7 +304,6 @@
     </div> <!-- page container -->
     </div> <!-- parallax container -->
     <!-- --------------- -->
-
      <!-- SIDEBAR MENU -->
      <div id="sidebarMenu" class="sidebar">
         <h1>About</h1>
@@ -275,7 +329,6 @@
         <br>
         - Release: Coming Summer 2023</p>
       </div>
-
     <!-- FOOTER MENU -->
     <footer>
         <div class="footerSocialContainer">

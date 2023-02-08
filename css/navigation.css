@@ -10,14 +10,6 @@
     'Ubuntu', sans-serif;
     'Ubuntu Condensed', sans-serif;
 */
-@-webkit-keyframes animFooterFade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 @keyframes animFooterFade {
   from {
     opacity: 0;
@@ -199,10 +191,8 @@ footer .footerSocialContainer button:hover {
   /* FOOTER */
   footer {
     opacity: 0;
-    -webkit-animation: animFooterFade 0.5s linear 3.2s 1 normal forwards;
-            animation: animFooterFade 0.5s linear 3.2s 1 normal forwards;
+    animation: animFooterFade 0.5s linear 3.2s 1 normal forwards;
     display: grid;
-    height: -webkit-min-content;
     height: -moz-min-content;
     height: min-content;
     grid-template-rows: auto;
