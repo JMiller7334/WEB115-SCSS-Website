@@ -100,21 +100,25 @@
         <div class="hero-container">
             <img src="img/coaster_hero.PNG" id="heroRides" alt="hero images">
             <img src="img/bus_stop.png" id="heroStory" alt="hero images">
-            <img src="img/intro/EndBringerFront.PNG" id="heroFeatures" alt="hero images">
-            <div class="lower-gradient"></div>
-            <div class="upper-gradient"></div>
+            <img src="img/intro/EndBringerFront.PNG" id="heroFeaturesMobile" alt="hero images">
+            <video id="heroFeatures" preload="auto" autoplay="true" loop="loop" muted="muted">
+                <source src="img/GamePromo.mp4" type="video/mp4">
+            </video>
 
-            <div class="hero-text" id="heroText">Play the story, live the adventure</div>
+            <div class="lower-gradient" id="heroGradient"></div>
+            <div class="upper-gradient" id=""></div>
+
+            <div class="hero-text" id="heroText"></div>
         </div>
         <div class="parallax-gradient"></div>
         <div class="button-container">
-            <button class="isSelected" id="buttonStory" onclick="toggleContent('Story')" 
+            <button class="notSelected" id="buttonStory" onclick="toggleContent('Story')" 
             class="sidebarButton">Story</button>
 
             <button class="notSelected" id="buttonRides" onclick="toggleContent('Rides')" 
             class="sidebarButton">Rides</button>
 
-            <button class="notSelected" id="buttonFeatures" onclick="toggleContent('Features')"
+            <button class="isSelected" id="buttonFeatures" onclick="toggleContent('Features')"
             class="sidebarButton">Features</button>
         </div>
 

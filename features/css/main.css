@@ -688,6 +688,7 @@ body {
 }
 
 .hero-container {
+  padding-top: 7vh;
   grid-area: page-hero;
   height: auto;
   display: grid;
@@ -703,21 +704,24 @@ body {
   font-size: 2em;
   font-family: "Permanent Marker", cursive;
   color: white;
-  margin: 2.25em 2rem;
+  margin: 0.7em 2rem;
   opacity: 0;
   animation: intro-animFade 0.7s linear 6s 1 normal forwards;
 }
+.hero-container video {
+  display: none;
+}
 .hero-container img {
-  z-index: 1;
   grid-area: hero;
   width: 100%;
-  height: 85vh;
+  height: 83.7vh;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: 10%;
      object-position: 10%;
 }
 .hero-container .upper-gradient {
+  margin-top: 5.8vh;
   display: block;
   position: absolute;
   z-index: 2;
@@ -727,32 +731,36 @@ body {
   background-image: linear-gradient(#171717, rgba(0, 0, 0, 0));
 }
 .hero-container .lower-gradient {
-  z-index: 2;
+  margin-top: 2px;
+  margin-top: 45vh;
+  display: block;
+  z-index: 11;
   grid-area: hero;
   width: 100%;
-  height: 100%;
+  height: 40vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0), #171717);
 }
 .hero-container #heroStory {
   -o-object-position: 10%;
      object-position: 10%;
   z-index: 1;
+  display: none;
 }
 .hero-container #heroRides {
   -o-object-position: 50%;
      object-position: 50%;
-  z-index: 0;
+  z-index: 1;
+  display: none;
 }
-.hero-container #heroFeatures {
+.hero-container #heroFeaturesMobile {
+  display: block;
+  z-index: 0;
   -o-object-position: 50%;
      object-position: 50%;
-  z-index: 0;
-  /*filter: brightness(110%);
-  filter: contrast(110%);
-  filter: saturate(120%);*/
 }
 
 .button-container {
+  z-index: 12;
   grid-area: page-buttons;
   display: flex;
   flex-direction: row;
@@ -903,7 +911,7 @@ body {
 }
 
 #categoryStory {
-  display: block;
+  display: none;
 }
 #categoryStory img {
   max-width: 400px;
@@ -914,7 +922,7 @@ body {
 }
 
 #categoryFeatures {
-  display: none;
+  display: block;
 }
 
 @media only screen and (min-width: 900px), only screen and (orientation: landscape) {
@@ -984,8 +992,20 @@ body {
   .parallax-background #parallax7 {
     transform: translateZ(-10px) scale(2);
   }
-  .hero-container img {
-    height: 85vh;
+  .hero-container video {
+    z-index: 10;
+    grid-area: hero;
+    width: 100%;
+    height: 83.7vh;
+    background: #171717;
+    display: block;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: 0 0;
+       object-position: 0 0;
+  }
+  .hero-container #heroFeaturesMobile {
+    display: none;
   }
   .page-main-container {
     top: 0;
@@ -1007,10 +1027,11 @@ body {
     background-image: linear-gradient(to right, #171717, rgba(0, 0, 0, 0));
   }
   .page-main-container .button-container {
-    height: 25vh;
+    height: 20vh;
   }
   .page-main-container .button-container button {
     padding: 1.5vw;
+    padding-top: 1vh;
   }
   .page-main-container p {
     font-size: calc(0.5rem + 1vw);
