@@ -101,8 +101,7 @@ body{
     "primary-content";
 }
 .hero-container{
-
-    padding-top: 7vh;
+    padding-top: 7vh; //disabled on desktop due to parallax conflict
     grid-area: page-hero;
     height: auto;
 
@@ -138,7 +137,7 @@ body{
         object-position: 10%;
     }
     .upper-gradient{
-        margin-top: 5.8vh;
+        //margin-top: 5.8vh;
         display: block;
         position: absolute;
         z-index: 2;
@@ -395,7 +394,9 @@ body{
     }
     //PARALLAX BACKGROUND//
     .parallax-container{
-        height: 100vh;
+        top: 7vh; //was 0  - to fixed parallax conflict/temp
+        position: absolute;
+        height: 93vh; //was 100 parallax conflict
         overflow-y: auto;
         overflow-x: hidden;
         perspective: 10px;
@@ -419,7 +420,7 @@ body{
         align-items: center;
 
         height: 100%;
-        margin-top: 90vh;
+        margin-top: 140vh;
         z-index: -1;
         transform-style: preserve-3d;
 
@@ -465,6 +466,7 @@ body{
         }  
     }
     .hero-container{
+        padding-top: 0; //0 padding due to parallax conflict
         video{
             z-index: 10;
             grid-area: hero;
@@ -507,7 +509,7 @@ body{
         }
 
         .button-container{
-            height: 20vh;
+            height: 27vh; //was 20 - parallax conflict
             button{
                 padding: 1.5vw;
                 padding-top: 1vh;

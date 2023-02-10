@@ -75,27 +75,41 @@ table {
 */
 /* NAV MENU */
 nav {
+  background-color: #171717;
   display: grid;
   grid-template-columns: 1fr, 2fr, 1f;
-  grid-template-rows: auto;
-  grid-template-areas: "main-nav . game-info-nav";
+  grid-template-rows: 7vh;
+  grid-template-areas: "main-nav  .  game-info-nav";
   z-index: 4;
   position: fixed;
   left: 0;
-  width: 100vw;
+  top: 0;
+  width: 100%;
   height: auto;
-  text-align: left;
-  padding: 0 0 0 5px;
+  align-items: center;
 }
 nav .nav-button-container {
+  grid-area: main-nav;
   display: flex;
   gap: 10px;
   width: 100%;
   height: 100%;
-  margin: 10px;
+  align-items: center;
 }
-nav #nav-main-buttons {
-  grid-area: main-nav;
+nav .nav-button-container .nav-logo-container {
+  background-color: rgb(144, 3, 3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25vh 0.5vh 0.25vh 0.5vh;
+  width: 12vh;
+  height: 100%;
+  margin-right: 20px;
+}
+nav .nav-button-container .nav-logo-container img {
+  height: 90%;
+  width: auto;
+  filter: invert(100%);
 }
 nav #nav-game-info {
   grid-area: game-info-nav;
@@ -240,8 +254,7 @@ footer .footerSocialContainer button:hover {
 @media only screen and (max-width: 900px) {
   nav {
     height: auto;
-    background-color: rgba(27, 25, 25, 0.55);
-    padding-bottom: 1rem;
+    background-color: #171717;
     width: 100vw;
   }
   nav #navButton {
@@ -721,7 +734,6 @@ body {
      object-position: 10%;
 }
 .hero-container .upper-gradient {
-  margin-top: 5.8vh;
   display: block;
   position: absolute;
   z-index: 2;
@@ -930,7 +942,9 @@ body {
     overflow: hidden;
   }
   .parallax-container {
-    height: 100vh;
+    top: 7vh;
+    position: absolute;
+    height: 93vh;
     overflow-y: auto;
     overflow-x: hidden;
     perspective: 10px;
@@ -951,7 +965,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100%;
-    margin-top: 90vh;
+    margin-top: 140vh;
     z-index: -1;
     transform-style: preserve-3d;
   }
@@ -992,6 +1006,9 @@ body {
   .parallax-background #parallax7 {
     transform: translateZ(-10px) scale(2);
   }
+  .hero-container {
+    padding-top: 0;
+  }
   .hero-container video {
     z-index: 10;
     grid-area: hero;
@@ -1027,7 +1044,7 @@ body {
     background-image: linear-gradient(to right, #171717, rgba(0, 0, 0, 0));
   }
   .page-main-container .button-container {
-    height: 20vh;
+    height: 27vh;
   }
   .page-main-container .button-container button {
     padding: 1.5vw;

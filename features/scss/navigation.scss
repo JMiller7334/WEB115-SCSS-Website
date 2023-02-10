@@ -4,6 +4,7 @@
 
 /*VARIABLES*/
 $navColorMain: rgba(27, 25, 25, 0.55);
+$navColorSolid: #171717;
 $navButtonColor: rgba(0, 0, 0, 0.75);
 $navButtonColorAlpha: rgba(0, 0, 0, 0);
 $navColorSeccondary: rgba(255, 255, 255, 1);
@@ -29,29 +30,47 @@ $sidebarFontSize: 25px;
 /* NAV MENU */
 
 nav{
+    background-color: $navColorSolid;
     display: grid;
-    grid-template-columns: 1fr, 2fr, 1f;
-    grid-template-rows: auto;
-    grid-template-areas: 'main-nav . game-info-nav';
+    grid-template-columns: 1fr,   2fr, 1f;
+    grid-template-rows: 7vh;
+    grid-template-areas: 'main-nav  .  game-info-nav';
 
     z-index: 4;
     position: fixed;
     left: 0;
-    width: 100vw;
+    top: 0;
+    width: 100%;
     height: auto;
-    text-align: left;
-    padding: 0 0 0 5px;
+    align-items: center;
 
     .nav-button-container{
+        grid-area: main-nav;
         display: flex;
         gap: 10px;
         width:100%;
         height: 100%;
 
-        margin: 10px;
-    }
-    #nav-main-buttons{
-        grid-area: main-nav;
+        align-items: center;
+
+        .nav-logo-container{
+            background-color: rgb(144, 3, 3);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 0.25vh 0.5vh 0.25vh 0.5vh;
+            width: 12vh;
+            height: 100%;
+            margin-right: 20px;
+
+            img{
+                height: 90%;
+                width: auto;
+                filter: invert(100%);
+            }
+        }
     }
     #nav-game-info{
         grid-area: game-info-nav
@@ -216,8 +235,8 @@ footer{
 @media only screen and (max-width: 900px){
     nav {
         height: auto;
-        background-color: $navColorMain;
-        padding-bottom: 1rem;
+        background-color: $navColorSolid;
+        //padding-bottom: 1rem;
         width: 100vw;
         #navButton {
             height: auto;
