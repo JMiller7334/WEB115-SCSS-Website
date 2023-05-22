@@ -51,7 +51,7 @@ $bgColor: #171717;
 }
 @keyframes anim-deselect-button{
     100% {
-        font-size: calc(1rem + 0.25%);
+        font-size: calc(1rem + 25%);
         text-decoration: none;
     }
 }
@@ -125,19 +125,27 @@ body{
     }
 
     video{
-        display: none;
+        z-index: 10;
+        grid-area: hero;
+        width: 100%;
+        height: auto;
+        background: $bgColor;
+        display: hidden;
+
+        object-fit:cover;
+        object-position: 50% 50%;
     }
 
     img{
         grid-area: hero;
         width: 100%;
-        height: 83.7vh;
+        height: 77vh;//83.7vh;
 
         object-fit: cover;
         object-position: 10%;
     }
     .upper-gradient{
-        //margin-top: 5.8vh;
+        //margin-top: 7vh;
         display: block;
         position: absolute;
         z-index: 2;
@@ -149,14 +157,15 @@ body{
 
     .lower-gradient{
         margin-top: 2px;
-        margin-top: 45vh;
-        display: block;
+        margin-top: 37vh;
+        display: none;
         z-index: 11;
         grid-area: hero;
         width: 100%;
         height: 40vh;
         background-image: linear-gradient(rgba(0, 0, 0, 0), $bgColor);
     }
+    
     //IDS for alternating hero images//
     //config default z-index
     #heroStory{
@@ -171,7 +180,7 @@ body{
     }
 
     #heroFeaturesMobile{
-        display: block;
+        display: none;
         z-index: 0;
         object-position: 50%;
     }
@@ -190,7 +199,7 @@ body{
 
     button{
         padding: 5vw; //original 5vw
-        font-family: $fontSecondary;
+        font-family: $fontCondensed;
         font-size: 1px;
         color: $fontColor;
         background-color: $colorButton;
@@ -360,6 +369,19 @@ body{
                     margin-top: 10%;
                     width: 80%
                 }
+                #vectorImg{
+                    filter: invert(100%);
+                    max-height: 200px;
+
+                }
+            }
+            #featureItem{
+                grid-template-rows: auto;
+                img{
+                    min-height: 100px;
+                    margin-right: 2vw;
+                    margin-bottom: 25%;
+                }
             }
         }
     }
@@ -478,6 +500,15 @@ body{
             object-fit:cover;
             object-position: 0 0;
         }
+
+        img{
+            height: 83.7vh;
+        }
+
+        .lower-gradient{
+            margin-top: 44.3vh;
+        }
+
         #heroFeaturesMobile{
             display: none;
         }
@@ -512,7 +543,7 @@ body{
             height: 27vh; //was 20 - parallax conflict
             button{
                 padding: 1.5vw;
-                padding-top: 1vh;
+                padding-top: 2.5vh;
             }
         }
 

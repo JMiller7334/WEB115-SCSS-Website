@@ -131,6 +131,7 @@ nav{
     align-items: center;
 
     background-color: $navColorMain;
+    backdrop-filter: blur(5px);
     overflow-x: hidden;
     padding-top: 60px;
     transition: 0.5s; /* total aimation time */
@@ -256,6 +257,8 @@ footer{
         grid-template-rows: auto;
         grid-template-areas: 'social';
         background-color: $navColorMain;
+        backdrop-filter: blur(5px);
+        height: 50px;
         margin-left: 0;
     }
 
@@ -276,6 +279,7 @@ footer{
     .sidebar{
         top: 0; //4vh
         height: 100vh; //92vh
+        backdrop-filter: blur(5px);
 
         h1 {
             text-align: left;

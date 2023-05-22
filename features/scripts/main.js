@@ -44,10 +44,12 @@ function toggleContent(request){
         is on a mobile device - if so we use the img hero for features.
         */
         if (request == "Features"){
+            document.getElementById("heroGradient").style.display = "none"
             //if (window.getComputedStyle(document.getElementById("heroFeaturesMobile")).display === "block"){
             if (window.matchMedia("(max-width: 900px)").matches) {
                 console.log("jsMain: request - " + request + " using mobile hero.");
-                document.getElementById('heroFeatures').style.display = "none";
+                document.getElementById("heroFeatures").style.display = "block";
+
             } else {
                 console.log("jsMain: request - " + request + " using hero.");
                 document.getElementById("heroFeatures").style.display = "block";
@@ -55,6 +57,7 @@ function toggleContent(request){
         } else {
             console.log("jsMain: request - " + request + " using non-feature hero.");
             document.getElementById('hero'+ request).style.display = "block";
+            document.getElementById("heroGradient").style.display = "block"
         }
         document.getElementById("category" + request).style.display = "block";
         document.getElementById("button"+ request).classList = ("isSelected");
@@ -66,7 +69,7 @@ function toggleContent(request){
 }
 
 //CORRECT HERO ON WINDOW RESIZE
-const mediaQuery = "(min-width: 900px)";
+/*const mediaQuery = "(min-width: 900px)";
 const mediaQueryList = window.matchMedia(mediaQuery);
 mediaQueryList.addEventListener('change', event => {
     console.log(window.innerWidth);
@@ -77,7 +80,7 @@ mediaQueryList.addEventListener('change', event => {
             document.getElementById("heroFeatures").style.display = "block";
         }else {
             console.log("jsMain: correcting features hero <900");
-            document.getElementById("heroFeatures").style.display = "none";
+            document.getElementById("heroFeatures").style.display = "block";
         }
     }
 })
@@ -97,6 +100,7 @@ function onOrientationChanged(change){
     }
 };
 window.matchMedia("orientation: portrait").addEventListener("change", onOrientationChanged);
+*/ //VIDEO RUN ON BOTH NOT USED
 
 
 //NOTE: func below handles clearing the intro screen after animations play.
